@@ -16,9 +16,10 @@ class App extends Component {
     })
   }
 
-  handleLogin (e) {
+  handleLogin = async(e) => {
     e.preventDefault()
     console.log("abc")
+    await fetch(`/admin`)
   }
 
   render(){
