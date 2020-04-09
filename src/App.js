@@ -8,7 +8,10 @@ class App extends Component {
   state={
     username: "",
     password: "",
+    newAdminUsername: "",
+    newAdminPassword: "",
     error: "",
+    newAdminError: "",
     isLoggedIn: false
   }
 
@@ -37,6 +40,7 @@ class App extends Component {
         this.setState({
           isLoggedIn: true
         })
+        this.props.history.push(`/`)
       }
       else{
         this.setState({
@@ -52,7 +56,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} handleChange={this.handleChange} handleLogin={this.handleLogin}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} handleChange={this.handleChange} handleLogin={this.handleLogin}/>}/>
         </Switch>
       </div>
     )
