@@ -49,6 +49,12 @@ class App extends Component {
             masterAcc: true
           })
         }
+        //MAKE SURE TO UPDATE BACKENED TO ONLY GIVE MASTER ACCOUNT ACCESS TO USERS
+        if(response.adminList){
+          this.setState({
+            allAdmin: response.adminList
+          })
+        }
       }
       else{
         this.setState({

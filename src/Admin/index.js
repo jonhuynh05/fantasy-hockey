@@ -4,7 +4,14 @@ import {withRouter} from "react-router-dom"
 class Admin extends Component{
     render(){
 
-        const admins = this.props.allAdmin
+        const admins = this.props.allAdmin.map((admin, i) => {
+            return(
+                <div key={i}>
+                    {admin}
+                    <button>Remove</button>
+                </div>
+            )
+        })
 
         return(
             <div>
@@ -44,6 +51,7 @@ class Admin extends Component{
                         this.props.newAdminError
                     }
                 </div>
+
                 {
                     this.props.masterAcc === true
                     ?
@@ -54,6 +62,7 @@ class Admin extends Component{
                     :
                     null
                 }
+                {admins}
             </div>
         )
     }
