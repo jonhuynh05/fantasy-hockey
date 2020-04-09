@@ -34,26 +34,23 @@ router.post("/login", async(req, res) => {
 
 router.post("/register", async(req, res) => {
     try{
-        console.log(req.body, "REGISTEr")
         const foundAdmin = await Admin.findOne({
-            username: req.body.username
+            username: req.body.newAdminUsername
         })
-        if (foundAdmin) {
-            if(bcrypt.compareSync(req.body.password, foundAdmin.password)){
-                req.session.username = foundAdmin.username
-                res.json({
-                    message: "Log in successful."
-                })
-            }
-            else{
-                res.json({
-                    message: "Password is incorrect."
-                })
-            }
-        }
-        else{
+        if(foundAdmin){
             res.json({
-                message: "Username not found."
+                message: "Username already exists."
+            })
+        }
+        else {
+            const adminDbEntry = {}
+            const password = req.body.newAdminPassword
+            const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+            adminDbEntry.username = req.body.newAdminUsername
+            adminDbEntry.password = hashPassword
+            const newAdmin = await Admin.create(adminDbEntry)
+            res.json({
+                message: "Admin created."
             })
         }
     }

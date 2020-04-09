@@ -38,7 +38,9 @@ class App extends Component {
       const response = await res.json()
       if (response.message === "Log in successful."){
         this.setState({
-          isLoggedIn: true
+          isLoggedIn: true,
+          username: "",
+          password: ""
         })
         this.props.history.push(`/`)
       }
@@ -54,7 +56,7 @@ class App extends Component {
   handleRegister = async(e) => {
     e.preventDefault()
     this.setState({
-      error: ""
+      newAdminError: ""
     })
     await fetch(`/admin/register`, {
       method: "POST",
@@ -66,18 +68,18 @@ class App extends Component {
     })
     .then(async res => {
       const response = await res.json()
-      if (response.message === "Log in successful."){
+      if (response.message === "Admin created."){
         this.setState({
-          isLoggedIn: true
+          newAdminError: response.message,
+          newAdminUsername: "",
+          newAdminPassword: ""
         })
-        this.props.history.push(`/`)
       }
       else{
         this.setState({
-          error: response.message
+          newAdminError: response.message
         })
       }
-      console.log(response, "this is the response")
     })
   }
 

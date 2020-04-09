@@ -11,8 +11,8 @@ class Admin extends Component{
                 <div>
                     {/* IF LOGIN IS TRUE ADD RULE */}
                     <form>
-                        <input onChange={this.props.handleChange} placeholder="Username" name="username"></input>
-                        <input onChange={this.props.handleChange}  placeholder="Password" name="password" type="password"></input>
+                        <input onChange={this.props.handleChange} placeholder="Username" name="username" value={this.props.username}></input>
+                        <input onChange={this.props.handleChange}  placeholder="Password" name="password" type="password" value={this.props.password}></input>
                         <button onClick={this.props.handleLogin}>Log In</button>
                     </form>
                     {
@@ -29,8 +29,8 @@ class Admin extends Component{
                 <div>
                     {/* IF LOGIN IS TRUE ADD RULE */}
                     <form>
-                        <input onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername"></input>
-                        <input onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password"></input>
+                        <input onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
+                        <input onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>
                         <button onClick={this.props.handleRegister}>Add User</button>
                     </form>
                     {
