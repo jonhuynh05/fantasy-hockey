@@ -10,10 +10,15 @@ class App extends Component {
     password: ""
   }
 
-  handleChange =(e) => {
+  handleChange = (e) => {
     this.setState({
       [e.currentTarget.name]: e.currentTarget.value
     })
+  }
+
+  handleLogin (e) {
+    e.preventDefault()
+    console.log("abc")
   }
 
   render(){
@@ -21,7 +26,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} handleChange={this.handleChange}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} handleChange={this.handleChange} handleLogin={this.handleLogin}/>}/>
         </Switch>
       </div>
     )
