@@ -12,7 +12,9 @@ class App extends Component {
     newAdminPassword: "",
     error: "",
     newAdminError: "",
-    isLoggedIn: false
+    isLoggedIn: false,
+    masterAcc: false,
+    allAdmin: []
   }
 
   handleChange = (e) => {
@@ -42,14 +44,17 @@ class App extends Component {
           username: "",
           password: ""
         })
-        this.props.history.push(`/`)
+        if(response.master === true){
+          this.setState({
+            masterAcc: true
+          })
+        }
       }
       else{
         this.setState({
           error: response.message
         })
       }
-      console.log(response, "this is the response")
     })
   }
 
@@ -88,7 +93,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister}/>}/>
         </Switch>
       </div>
     )

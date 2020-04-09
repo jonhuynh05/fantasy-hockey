@@ -3,6 +3,9 @@ import {withRouter} from "react-router-dom"
 
 class Admin extends Component{
     render(){
+
+        const admins = this.props.allAdmin
+
         return(
             <div>
                 <div>
@@ -41,6 +44,16 @@ class Admin extends Component{
                         this.props.newAdminError
                     }
                 </div>
+                {
+                    this.props.masterAcc === true
+                    ?
+                    <div>
+                        DELETE USER HERE
+                        {admins}
+                    </div>
+                    :
+                    null
+                }
             </div>
         )
     }
