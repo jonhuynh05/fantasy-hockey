@@ -24,18 +24,21 @@ class Admin extends Component{
                     }
                 </div>
                 <div>
+                    Register More Admins
+                </div>
+                <div>
                     {/* IF LOGIN IS TRUE ADD RULE */}
                     <form>
-                        <input onChange={this.props.handleChange} placeholder="Username" name="username"></input>
-                        <input onChange={this.props.handleChange}  placeholder="Password" name="password" type="password"></input>
-                        <button onClick={this.props.handleLogin}>Log In</button>
+                        <input onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername"></input>
+                        <input onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password"></input>
+                        <button onClick={this.props.handleRegister}>Add User</button>
                     </form>
                     {
-                        this.props.error === ""
+                        this.props.newAdminError === ""
                         ?
                         null
                         :
-                        this.props.error
+                        this.props.newAdminError
                     }
                 </div>
             </div>

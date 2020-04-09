@@ -26,7 +26,37 @@ class App extends Component {
     this.setState({
       error: ""
     })
-    await fetch(`/admin`, {
+    await fetch(`/admin/login`, {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(async res => {
+      const response = await res.json()
+      if (response.message === "Log in successful."){
+        this.setState({
+          isLoggedIn: true
+        })
+        this.props.history.push(`/`)
+      }
+      else{
+        this.setState({
+          error: response.message
+        })
+      }
+      console.log(response, "this is the response")
+    })
+  }
+
+  handleRegister = async(e) => {
+    e.preventDefault()
+    this.setState({
+      error: ""
+    })
+    await fetch(`/admin/register`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(this.state),
@@ -56,7 +86,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} handleChange={this.handleChange} handleLogin={this.handleLogin}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister}/>}/>
         </Switch>
       </div>
     )
