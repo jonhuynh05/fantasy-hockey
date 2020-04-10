@@ -10,7 +10,10 @@ class Champions extends Component{
     }
 
     async componentDidMount(){
-        console.log("abc")
+        const champList = await(await fetch(`/champions`)).json()
+        this.setState({
+            recipients: champList
+        })
     }
 
     handleChange = (e) => {
