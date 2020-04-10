@@ -4,11 +4,19 @@ import "./champions.css"
 
 class Champions extends Component{
     state = {
-        recipients: []
+        recipients: [],
+        recipient: "",
+        year: ""
     }
 
     async componentDidMount(){
         console.log("abc")
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
     }
 
 
@@ -28,8 +36,8 @@ class Champions extends Component{
                 </div>
                 <div className="category-input-row">
                     <form id="category-input-form">
-                        <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient"/>
-                        <input className="category-input" id="year-input" placeholder="Year" name="year"/>
+                        <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient" onChange={this.handleChange}/>
+                        <input className="category-input" id="year-input" placeholder="Year" name="year" onChange={this.handleChange}/>
                         <button id="champion-submit-button">Submit</button>
                     </form>
                 </div>
