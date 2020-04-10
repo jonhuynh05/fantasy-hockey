@@ -78,6 +78,23 @@ class App extends Component {
     })
   }
 
+  handleLogout = async() => {
+    await fetch(`/admin/logout`)
+    .then(async res => {
+      this.setState({
+        username: "",
+        password: "",
+        newAdminUsername: "",
+        newAdminPassword: "",
+        error: "",
+        newAdminError: "",
+        isLoggedIn: false,
+        masterAcc: false,
+        allAdmin: []
+      })
+    })
+  }
+
   handleRegister = async(e) => {
     e.preventDefault()
     this.setState({
@@ -134,7 +151,7 @@ class App extends Component {
         {
           this.state.isLoggedIn === true
           ?
-          <AdminMode />
+          <AdminMode handleLogout={this.handleLogout}/>
           :
           null
         }

@@ -24,6 +24,16 @@ router.get("/adminList", async(req, res) => {
     }
 })
 
+router.get("/logout", async (req, res) => {
+    try{
+        req.session.destroy()
+        res.json("Logged out.")
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 router.post("/login", async(req, res) => {
     try{
         const foundAdmin = await Admin.findOne({
