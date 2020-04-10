@@ -9,11 +9,15 @@ class Champions extends Component{
         year: ""
     }
 
-    async componentDidMount(){
+    async getChampList () {
         const champList = await(await fetch(`/champions`)).json()
         this.setState({
             recipients: champList
         })
+    }
+
+    async componentDidMount(){
+        this.getChampList()
     }
 
     handleChange = (e) => {
@@ -39,11 +43,26 @@ class Champions extends Component{
                 recipient: "",
                 year: ""
             })
+            this.getChampList()
         })
     }
 
 
     render(){
+
+        const champions = this.state.recipients.map((champion, i) => {
+            return(
+                <div key={i} className="champion-row">
+                    <div className="category" id="champion">
+                        {champion.recipient}
+                    </div>
+                    <div className="category" id="winner-year">
+                        {champion.year}
+                    </div>
+                </div>
+            )
+        })
+
         return(
             <div id="champions-container">
                 <div className="header" id="champions-header">
@@ -57,6 +76,7 @@ class Champions extends Component{
                         Year
                     </div>
                 </div>
+                {champions}
                 <div className="category-input-row">
                     <form id="category-input-form">
                         <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient" value={this.state.recipient} onChange={this.handleChange}/>
