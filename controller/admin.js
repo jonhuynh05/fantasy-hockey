@@ -3,6 +3,27 @@ const router = express.Router()
 const Admin = require("../models/Admin")
 const bcrypt = require("bcryptjs")
 
+router.get("/adminList", async(req, res) => {
+    try{
+        const allAdmin = await Admin.find({})
+        const adminList = []
+        for (let i = 0; i < allAdmin.length; i++){
+            if(allAdmin[i].username === "thecommissioner"){
+                null
+            }
+            else{
+                adminList.push({username: allAdmin[i].username})
+            }
+        }
+        res.json({
+            adminList: adminList
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 router.post("/login", async(req, res) => {
     try{
         const foundAdmin = await Admin.findOne({
@@ -22,9 +43,13 @@ router.post("/login", async(req, res) => {
                     const allAdmin = await Admin.find({})
                     const adminList = []
                     for (let i = 0; i < allAdmin.length; i++){
-                        adminList.push({username: allAdmin[i].username})
+                        if(allAdmin[i].username === "thecommissioner"){
+                            null
+                        }
+                        else{
+                            adminList.push({username: allAdmin[i].username})
+                        }
                     }
-                    console.log(adminList)
                     res.json({
                         message: "Log in successful.",
                         adminList: adminList
@@ -77,7 +102,12 @@ router.post("/register", async(req, res) => {
 
 router.delete("/remove", async (req, res) => {
     try{
-        console.log(req.body)
+        await Admin.findOneAndDelete({username: req.body.username})
+        console.log(req.body.username)
+        res.json({
+            message: "Removed."
+        })
+
     }
     catch(err){
         console.log(err)

@@ -17,6 +17,18 @@ class App extends Component {
     allAdmin: []
   }
 
+  async getAdminList () {
+    try{
+      const response = await( await fetch(`/admin/adminList`)).json()
+      this.setState({
+        allAdmin: response.adminList
+      })
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.currentTarget.name]: e.currentTarget.value
@@ -85,6 +97,7 @@ class App extends Component {
           newAdminUsername: "",
           newAdminPassword: ""
         })
+        this.getAdminList()
       }
       else{
         this.setState({
@@ -96,7 +109,6 @@ class App extends Component {
 
   handleRemove = async (e) => {
     try{
-      console.log(typeof this.state.allAdmin[e.currentTarget.value])
       await fetch(`/admin/remove/`, {
         method: "DELETE",
         credentials: "include",
@@ -106,7 +118,7 @@ class App extends Component {
         }
       })
       .then(async res => {
-        console.log("deleted")
+        this.getAdminList()
       })
     }
     catch(err){
