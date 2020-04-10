@@ -1,0 +1,14 @@
+#champions-container{
+    text-align: center;
+}
+
+.category-header-row{
+    display: flex;
+    text-align: center;
+    padding: 0 50px;
+}
+
+.category{
+    margin: 15px auto;
+    font-weight: bold;
+}
