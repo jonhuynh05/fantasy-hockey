@@ -9,7 +9,8 @@ router.get("/", async (req, res) => {
         for (let i = 0; i < allChampions.length; i++){
             champList.push({
                 recipient: allChampions[i].recipient,
-                year: allChampions[i].year
+                year: allChampions[i].year,
+                id: allChampions[i]._id
             })
         }
         res.json(champList)

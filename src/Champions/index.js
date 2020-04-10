@@ -47,6 +47,10 @@ class Champions extends Component{
         })
     }
 
+    handleDelete = (e) => {
+        console.log(e.currentTarget.value)
+    }
+
 
     render(){
 
@@ -58,6 +62,9 @@ class Champions extends Component{
                     </div>
                     <div className="category" id="winner-year">
                         {champion.year}
+                    </div>
+                    <div>
+                        <button onClick={this.handleDelete} value={champion.id}>Remove</button>
                     </div>
                 </div>
             )
