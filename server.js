@@ -22,7 +22,7 @@ app.use(methodOverride("_method"))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/admin", adminController)
-app.use("/champion", championController)
+app.use("/champions", championController)
 
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"))
