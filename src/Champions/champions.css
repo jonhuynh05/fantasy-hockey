@@ -12,3 +12,18 @@
     margin: 15px auto;
     font-weight: bold;
 }
+
+#category-input-form{
+    text-align: center;
+    padding: 0 50px;
+
+}
+
+.category-input{
+    margin: 10px;
+    text-align: center;
+}
+
+#champion-submit-button{
+    margin: 10px;
+}

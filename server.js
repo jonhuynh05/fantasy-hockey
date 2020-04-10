@@ -7,6 +7,7 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const fetch = require("node-fetch")
 const adminController = require("./controller/admin")
+const championController = require("./controller/champion")
 const PORT = process.env.PORT || 8000
 
 require("./config/db")
@@ -21,6 +22,7 @@ app.use(methodOverride("_method"))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/admin", adminController)
+app.use("/champion", championController)
 
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"))

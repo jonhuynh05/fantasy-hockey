@@ -26,6 +26,13 @@ class Champions extends Component{
                         Year
                     </div>
                 </div>
+                <div className="category-input-row">
+                    <form id="category-input-form">
+                        <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient"/>
+                        <input className="category-input" id="year-input" placeholder="Year" name="year"/>
+                        <button id="champion-submit-button">Submit</button>
+                    </form>
+                </div>
             </div>
         )
     }
