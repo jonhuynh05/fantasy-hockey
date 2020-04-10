@@ -6,7 +6,7 @@ class Home extends Component{
     render(){
         return(
             <div id="home-container">
-                <div id="champion-header">
+                <div className="header" id="champion-header">
                     All Hail 2018 Champion, Evil Empire!
                 </div>
                 <div>
