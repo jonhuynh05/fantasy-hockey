@@ -7,8 +7,8 @@ class Admin extends Component{
         const admins = this.props.allAdmin.map((admin, i) => {
             return(
                 <div key={i}>
-                    {admin}
-                    <button>Remove</button>
+                    {admin.username}
+                    <button value={i} onClick={this.props.handleRemove}>Remove</button>
                 </div>
             )
         })

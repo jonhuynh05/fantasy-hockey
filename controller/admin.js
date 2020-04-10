@@ -22,7 +22,7 @@ router.post("/login", async(req, res) => {
                     const allAdmin = await Admin.find({})
                     const adminList = []
                     for (let i = 0; i < allAdmin.length; i++){
-                        adminList.push(allAdmin[i].username)
+                        adminList.push({username: allAdmin[i].username})
                     }
                     console.log(adminList)
                     res.json({
@@ -69,6 +69,15 @@ router.post("/register", async(req, res) => {
                 message: "Admin created."
             })
         }
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
+router.delete("/remove", async (req, res) => {
+    try{
+        console.log(req.body)
     }
     catch(err){
         console.log(err)

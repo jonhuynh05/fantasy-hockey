@@ -94,12 +94,32 @@ class App extends Component {
     })
   }
 
+  handleRemove = async (e) => {
+    try{
+      console.log(typeof this.state.allAdmin[e.currentTarget.value])
+      await fetch(`/admin/remove/`, {
+        method: "DELETE",
+        credentials: "include",
+        body: JSON.stringify(this.state.allAdmin[e.currentTarget.value]),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(async res => {
+        console.log("deleted")
+      })
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
   render(){
     return(
       <div>
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister} handleRemove={this.handleRemove}/>}/>
         </Switch>
       </div>
     )
