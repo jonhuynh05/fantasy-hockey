@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter, Switch, Route} from "react-router-dom"
 import './App.css';
+import AdminMode from "./Admin Mode"
 import NavBar from "./NavBar"
 import Home from "./Home"
 import Admin from "./Admin"
@@ -130,6 +131,13 @@ class App extends Component {
   render(){
     return(
       <div>
+        {
+          this.state.isLoggedIn === true
+          ?
+          <AdminMode />
+          :
+          null
+        }
         <NavBar />
         <Switch>
           <Route exact path={"/"} render={() => <Home />}/>
