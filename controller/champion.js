@@ -23,13 +23,24 @@ router.get("/", async (req, res) => {
 
 router.post("/new", async (req, res) => {
     try{
-        console.log(req.body)
         const championDbEntry = {}
         championDbEntry.recipient = req.body.recipient
         championDbEntry.year = req.body.year
         const newChampion = await Champion.create(championDbEntry)
         res.json({
             message: `${newChampion.recipient} added.`
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
+router.delete("/remove", async (req, res) => {
+    try{
+        await Champion.findByIdAndDelete(req.body.id)
+        res.json({
+            message: "Removed."
         })
     }
     catch(err){

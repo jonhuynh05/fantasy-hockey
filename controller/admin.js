@@ -117,7 +117,6 @@ router.delete("/remove", async (req, res) => {
         res.json({
             message: "Removed."
         })
-
     }
     catch(err){
         console.log(err)

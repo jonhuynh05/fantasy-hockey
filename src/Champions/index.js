@@ -47,8 +47,21 @@ class Champions extends Component{
         })
     }
 
-    handleDelete = (e) => {
-        console.log(e.currentTarget.value)
+    handleDelete = async (e) => {
+        try{
+            await fetch(`/champions/remove/`, {
+                method: "DELETE",
+                credentials: "include",
+                body: JSON.stringify(this.state.recipients[e.currentTarget.value]),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              })
+            this.getChampList()
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
 
@@ -64,7 +77,7 @@ class Champions extends Component{
                         {champion.year}
                     </div>
                     <div>
-                        <button onClick={this.handleDelete} value={champion.id}>Remove</button>
+                        <button onClick={this.handleDelete} value={i}>Remove</button>
                     </div>
                 </div>
             )
