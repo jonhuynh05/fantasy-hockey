@@ -6,6 +6,7 @@ import DraftYear from "../Draft-Year"
 class DraftHistory extends Component{
     state = {
         years: [],
+        selectYear: "",
         year: "",
         round: "",
         pick: "",
@@ -54,11 +55,17 @@ class DraftHistory extends Component{
         })
     }
 
+    handleSelect = (e) => {
+        this.setState({
+            selectYear: e.currentTarget.value
+        })
+    }
+
     render(){
 
         const selectYear = this.state.years.map((year, i) => {
             return(
-                <option key={i} value={year._id}>
+                <option onSelect={this.handleSelect} key={i} value={year._id}>
                     {year.year}
                 </option>
             )
@@ -70,18 +77,18 @@ class DraftHistory extends Component{
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
-                <select placeholder="Select Year" defaultValue="">
+                <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
                     <option value="" disabled hidden>Choose a year</option>
                     {selectYear}
                 </select>
-                <DraftYear />
+                <DraftYear selectYear={this.state.selectYear}/>
                 <div className="category-input-row">
                     <form id="category-input-form">
                         <input className="category-input" id="round-input" placeholder="Round" name="round" value={this.state.round} onChange={this.handleChange}/>
                         <input className="category-input" id="pick-input" placeholder="Pick" name="pick" value={this.state.pick} onChange={this.handleChange}/>
                         <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange}/>
                         <input className="category-input" id="selection-input" placeholder="Selection" name="selection" value={this.state.selection} onChange={this.handleChange}/>
-                        <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange}/>
+                        <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange} required/>
                         <button onClick={this.handleSubmit}id="draft-submit-button">Submit</button>
                     </form>
                 </div>
