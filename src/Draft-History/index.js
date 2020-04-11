@@ -19,6 +19,30 @@ class DraftHistory extends Component{
         })
     }
 
+    handleSubmit = async (e) => {
+        e.preventDefault()
+        await fetch(`/drafts/new`, {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(this.state),
+            headers: {
+              "Content-Type": "application/json"
+            }
+        })
+        .then(async res => {
+            const response = await res.json()
+            console.log(response)
+            this.setState({
+                year: "",
+                round: "",
+                pick: "",
+                team: "",
+                selection: ""
+            })
+            // this.getChampList()
+        })
+    }
+
     render(){
         return(
             <div id="draft-history-container">
