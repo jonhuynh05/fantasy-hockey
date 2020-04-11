@@ -23,7 +23,12 @@ router.get("/:year", async(req, res) => {
     try{
         console.log(req.params.year, "paraams")
         const year = await DraftYear.findOne({year: req.params.year})
-        console.log(year)
+        const allDetails = []
+        for (let i = 0; i < year.details.length; i++){
+            const foundDetails = await Draft.findById(year.details[i])
+            allDetails.push(foundDetails)
+        }
+        res.json(allDetails)
 
     }
     catch(err){

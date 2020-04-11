@@ -22,7 +22,8 @@ class App extends Component {
     isLoggedIn: false,
     masterAcc: false,
     allAdmin: [],
-    selectYear: ""
+    selectYear: "",
+    draftDetails: []
 
   }
 
@@ -161,8 +162,14 @@ class App extends Component {
     this.setState({
         selectYear: e.currentTarget.value
     })
-    const details = await fetch(`/drafts/${e.currentTarget.value}`)
-    // this.props.history.push(`/draft-history/${this.state.selectYear}`)
+    await fetch(`/drafts/${e.currentTarget.value}`)
+    .then(async res => {
+      const response = await res.json()
+      this.setState({
+        draftDetails: response
+      })
+      this.props.history.push(`/draft-history/${this.state.selectYear}`)
+    })
 }
 
   render(){
@@ -183,7 +190,7 @@ class App extends Component {
           <Route exact path={"/champions"} render={() => <Champions />}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
           <Route exact path={"/draft-history"} render={() => <DraftHistory selectYear={this.state.selectYear} getDraftDetails={this.state.getDraftDetails} handleSelect={this.handleSelect}/>}/>
-          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear />}/>
+          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear draftDetails={this.state.draftDetails}/>}/>
         </Switch>
       </div>
     )
