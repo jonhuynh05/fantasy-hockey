@@ -5,8 +5,20 @@ import DraftYear from "../Draft-Year"
 
 class DraftHistory extends Component{
     state = {
-        years: []
+        years: [],
+        year: "",
+        round: "",
+        pick: "",
+        team: "",
+        selection: ""
     }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
+    }
+
     render(){
         return(
             <div id="draft-history-container">
@@ -15,15 +27,16 @@ class DraftHistory extends Component{
                     League of Leagues Drafts: A History
                 </div>
                 <DraftYear />
-                {/* <div className="category-input-row">
+                <div className="category-input-row">
                     <form id="category-input-form">
+                        <input className="category-input" id="round-input" placeholder="Round" name="round" value={this.state.round} onChange={this.handleChange}/>
+                        <input className="category-input" id="pick-input" placeholder="Pick" name="pick" value={this.state.pick} onChange={this.handleChange}/>
                         <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange}/>
-                        <input className="category-input" id="arrivals-input" placeholder="Arrivals" name="arrivals" value={this.state.arrivals} onChange={this.handleChange}/>
-                        <input className="category-input" id="departures-input" placeholder="Departures" name="departures" value={this.state.departures} onChange={this.handleChange}/>
-                        <input className="category-input" id="date-input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange}/>
-                        <button onClick={this.handleSubmit}id="trade-submit-button">Submit</button>
+                        <input className="category-input" id="selection-input" placeholder="Selection" name="selection" value={this.state.selection} onChange={this.handleChange}/>
+                        <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange}/>
+                        <button onClick={this.handleSubmit}id="draft-submit-button">Submit</button>
                     </form>
-                </div> */}
+                </div>
             </div>
         )
     }
