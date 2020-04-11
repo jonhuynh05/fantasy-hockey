@@ -53,6 +53,10 @@ class DraftHistory extends Component{
         })
     }
 
+    handleSelect = async (e) => {
+        this.props.history.push(`/draft-history/${e.currentTarget.value}`)
+      }
+
     render(){
 
         const selectYear = this.state.years.map((year, i) => {
@@ -69,7 +73,7 @@ class DraftHistory extends Component{
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
-                <select onChange={this.props.handleSelect} placeholder="Select Year" defaultValue="">
+                <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
                     <option value="" disabled hidden>Choose a year</option>
                     {selectYear}
                 </select>

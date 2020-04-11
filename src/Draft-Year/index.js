@@ -3,28 +3,43 @@ import { withRouter } from 'react-router-dom'
 import "./draftyear.css"
 
 class DraftYear extends Component{
-    render(){
-        const draftDetails = this.props.draftDetails.map((detail, i) => {
-            return(
-                <div key={i} className="draft-row">
-                    <div className="category">
-                        {detail.round}
-                    </div>
-                    <div className="category">
-                        {detail.pick}
-                    </div>
-                    <div className="category">
-                        {detail.team}
-                    </div>
-                    <div className="category">
-                        {detail.selection}
-                    </div>
-                    {/* <div className="category" id="remove-button-container">
-                        <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
-                    </div> */}
-                </div>
-            )
+
+    state = {
+        draftDetails: []
+    }
+
+    async componentDidMount(){ 
+        await fetch(`/drafts/${this.props.match.params.draftyear}`)
+        .then(async res => {
+            const response = await res.json()
+            this.setState({
+            draftDetails: response
+            })
         })
+    }
+
+    render(){
+            const draftDetails = this.state.draftDetails.map((detail, i) => {
+                return(
+                    <div key={i} className="draft-row">
+                        <div className="category">
+                            {detail.round}
+                        </div>
+                        <div className="category">
+                            {detail.pick}
+                        </div>
+                        <div className="category">
+                            {detail.team}
+                        </div>
+                        <div className="category">
+                            {detail.selection}
+                        </div>
+                        {/* <div className="category" id="remove-button-container">
+                            <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                        </div> */}
+                    </div>
+                )
+            })
         return(
             <div id="draft-year-container">
                 <div className="header" id="year-header">

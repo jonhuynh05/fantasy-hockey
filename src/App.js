@@ -21,10 +21,7 @@ class App extends Component {
     newAdminError: "",
     isLoggedIn: false,
     masterAcc: false,
-    allAdmin: [],
-    selectYear: "",
-    draftDetails: []
-
+    allAdmin: []
   }
 
   async getAdminList () {
@@ -38,11 +35,6 @@ class App extends Component {
       console.log(err)
     }
   }
-
-  async getDraftDetails () {
-    const details = await fetch(`/drafts/${this.state.selectYear}`)
-    // console.log(details)
-}
 
   handleChange = (e) => {
     this.setState({
@@ -158,20 +150,6 @@ class App extends Component {
     }
   }
 
-  handleSelect = async (e) => {
-    this.setState({
-        selectYear: e.currentTarget.value
-    })
-    await fetch(`/drafts/${e.currentTarget.value}`)
-    .then(async res => {
-      const response = await res.json()
-      this.setState({
-        draftDetails: response
-      })
-      this.props.history.push(`/draft-history/${this.state.selectYear}`)
-    })
-}
-
   render(){
     return(
       <div>
@@ -189,8 +167,8 @@ class App extends Component {
           <Route exact path={"/about"} render={() => <About />}/>
           <Route exact path={"/champions"} render={() => <Champions />}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
-          <Route exact path={"/draft-history"} render={() => <DraftHistory selectYear={this.state.selectYear} getDraftDetails={this.state.getDraftDetails} handleSelect={this.handleSelect}/>}/>
-          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear draftDetails={this.state.draftDetails} selectYear={this.state.selectYear}/>}/>
+          <Route exact path={"/draft-history"} render={() => <DraftHistory />}/>
+          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear />}/>
         </Switch>
       </div>
     )
