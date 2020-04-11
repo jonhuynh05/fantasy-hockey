@@ -5,12 +5,23 @@ import DraftYear from "../Draft-Year"
 
 class DraftHistory extends Component{
     state = {
-        years: [1, 2, 3],
+        years: [],
         year: "",
         round: "",
         pick: "",
         team: "",
         selection: ""
+    }
+
+    async getDraftYears () {
+        const yearList = await(await fetch(`/drafts`)).json()
+        this.setState({
+            years: yearList
+        })
+    }
+
+    async componentDidMount(){
+        this.getDraftYears()
     }
 
     handleChange = (e) => {
@@ -39,7 +50,7 @@ class DraftHistory extends Component{
                 team: "",
                 selection: ""
             })
-            // this.getChampList()
+            this.getDraftYears()
         })
     }
 

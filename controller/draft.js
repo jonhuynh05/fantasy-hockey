@@ -3,25 +3,19 @@ const router = express.Router()
 const Draft = require("../models/Draft")
 const DraftYear = require("../models/DraftYear")
 
-// router.get("/", async (req, res) => {
-//     try{
-//         const allTrades = await Trade.find({})
-//         const tradeList = []
-//         for (let i = 0; i < allTrades.length; i++){
-//             tradeList.push({
-//                 team: allTrades[i].team,
-//                 arrivals: allTrades[i].arrivals,
-//                 departures: allTrades[i].departures,
-//                 date: allTrades[i].date,
-//                 id: allTrades[i]._id
-//             })
-//         }
-//         res.json(tradeList)
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-// })
+router.get("/", async (req, res) => {
+    try{
+        const allYears = await DraftYear.find({})
+        const yearList = []
+        for (let i = 0; i < allYears.length; i++){
+            yearList.push(allYears[i].year)
+        }
+        res.json(yearList)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 
 
 router.post("/new", async (req, res) => {
