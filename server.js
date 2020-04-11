@@ -9,6 +9,7 @@ const fetch = require("node-fetch")
 const adminController = require("./controller/admin")
 const championController = require("./controller/champion")
 const tradesController = require("./controller/trades")
+const draftControler = require("./controller/draft")
 const PORT = process.env.PORT || 8000
 
 require("./config/db")
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use("/admin", adminController)
 app.use("/champions", championController)
 app.use("/trades", tradesController)
+app.use("/drafts", draftControler)
 
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"))
