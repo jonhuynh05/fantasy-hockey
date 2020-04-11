@@ -58,8 +58,8 @@ class DraftHistory extends Component{
 
         const selectYear = this.state.years.map((year, i) => {
             return(
-                <option key={i}>
-                    {year}
+                <option key={i} value={year._id}>
+                    {year.year}
                 </option>
             )
         })

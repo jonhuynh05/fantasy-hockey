@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
         const allYears = await DraftYear.find({})
         const yearList = []
         for (let i = 0; i < allYears.length; i++){
-            yearList.push(allYears[i].year)
+            yearList.push(allYears[i])
         }
         res.json(yearList)
     }
