@@ -8,6 +8,7 @@ const session = require("express-session")
 const fetch = require("node-fetch")
 const adminController = require("./controller/admin")
 const championController = require("./controller/champion")
+const tradesController = require("./controller/trades")
 const PORT = process.env.PORT || 8000
 
 require("./config/db")
@@ -23,6 +24,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/admin", adminController)
 app.use("/champions", championController)
+app.use("/trades", tradesController)
 
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"))

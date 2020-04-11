@@ -7,6 +7,7 @@ import Home from "./Home"
 import Admin from "./Admin"
 import About from "./About"
 import Champions from "./Champions"
+import TradeHistory from "./Trade-History"
 
 class App extends Component {
   state={
@@ -163,6 +164,7 @@ class App extends Component {
           <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister} handleRemove={this.handleRemove}/>}/>
           <Route exact path={"/about"} render={() => <About />}/>
           <Route exact path={"/champions"} render={() => <Champions />}/>
+          <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
         </Switch>
       </div>
     )
