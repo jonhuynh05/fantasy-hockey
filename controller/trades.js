@@ -42,7 +42,7 @@ router.post("/new", async (req, res) => {
 
 router.delete("/remove", async (req, res) => {
     try{
-        await Champion.findByIdAndDelete(req.body.id)
+        await Trade.findByIdAndDelete(req.body.id)
         res.json({
             message: "Removed."
         })

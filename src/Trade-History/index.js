@@ -51,6 +51,23 @@ class TradeHistory extends Component{
         })
     }
 
+    handleDelete = async (e) => {
+        try{
+            await fetch(`/trades/remove/`, {
+                method: "DELETE",
+                credentials: "include",
+                body: JSON.stringify(this.state.trades[e.currentTarget.value]),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              })
+            this.getTradeList()
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
     render(){
 
         const trades = this.state.trades.map((trade, i) => {
