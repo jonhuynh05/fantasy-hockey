@@ -8,6 +8,7 @@ import Admin from "./Admin"
 import About from "./About"
 import Champions from "./Champions"
 import TradeHistory from "./Trade-History"
+import DraftHistory from "./Draft-History"
 
 class App extends Component {
   state={
@@ -165,6 +166,7 @@ class App extends Component {
           <Route exact path={"/about"} render={() => <About />}/>
           <Route exact path={"/champions"} render={() => <Champions />}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
+          <Route exact path={"/draft-history"} render={() => <DraftHistory />}/>
         </Switch>
       </div>
     )
