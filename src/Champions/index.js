@@ -76,8 +76,8 @@ class Champions extends Component{
                     <div className="category" id="winner-year">
                         {champion.year}
                     </div>
-                    <div>
-                        <button onClick={this.handleDelete} value={i}>Remove</button>
+                    <div className="category" id="remove-button-container">
+                        <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
                     </div>
                 </div>
             )
