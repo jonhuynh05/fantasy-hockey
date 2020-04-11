@@ -5,7 +5,7 @@ import DraftYear from "../Draft-Year"
 
 class DraftHistory extends Component{
     state = {
-        years: [],
+        years: [1, 2, 3],
         year: "",
         round: "",
         pick: "",
@@ -44,12 +44,25 @@ class DraftHistory extends Component{
     }
 
     render(){
+
+        const selectYear = this.state.years.map((year, i) => {
+            return(
+                <option key={i}>
+                    {year}
+                </option>
+            )
+        })
+
         return(
             <div id="draft-history-container">
                 ADD A SINGLE DRAFT HERE
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
+                <select placeholder="Select Year" defaultValue="">
+                    <option value="" disabled hidden>Choose a year</option>
+                    {selectYear}
+                </select>
                 <DraftYear />
                 <div className="category-input-row">
                     <form id="category-input-form">
