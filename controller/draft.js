@@ -3,8 +3,10 @@ const router = express.Router()
 const Draft = require("../models/Draft")
 const DraftYear = require("../models/DraftYear")
 
+
 router.get("/", async (req, res) => {
     try{
+        console.log("hits")
         const allYears = await DraftYear.find({})
         const yearList = []
         for (let i = 0; i < allYears.length; i++){
@@ -17,10 +19,12 @@ router.get("/", async (req, res) => {
     }
 })
 
-router.get("/:draftyear", async(req, res) => {
+router.get("/:year", async(req, res) => {
     try{
-        const year = await DraftYear.findOne({year: req.params.draftyear})
+        console.log(req.params.year, "paraams")
+        const year = await DraftYear.findOne({year: req.params.year})
         console.log(year)
+
     }
     catch(err){
         console.log(err)

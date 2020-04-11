@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import "./drafthistory.css"
-import DraftYear from "../Draft-Year"
 
 class DraftHistory extends Component{
     state = {
         years: [],
-        selectYear: "",
         year: "",
         round: "",
         pick: "",
@@ -19,11 +17,6 @@ class DraftHistory extends Component{
         this.setState({
             years: yearList
         })
-    }
-
-    async getDraftDetails () {
-        const details = await(await fetch(`/drafts/${this.state.selectYear}`))
-        console.log(details)
     }
 
     async componentDidMount(){
@@ -60,19 +53,11 @@ class DraftHistory extends Component{
         })
     }
 
-    handleSelect = async (e) => {
-        this.setState({
-            selectYear: e.currentTarget.value
-        })
-        await this.getDraftDetails()
-        // this.props.history.push(`/draft-history/${this.state.selectYear}`)
-    }
-
     render(){
 
         const selectYear = this.state.years.map((year, i) => {
             return(
-                <option onSelect={this.handleSelect} key={i} value={year.year}>
+                <option key={i} value={year.year}>
                     {year.year}
                 </option>
             )
@@ -84,11 +69,10 @@ class DraftHistory extends Component{
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
-                <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
+                <select onChange={this.props.handleSelect} placeholder="Select Year" defaultValue="">
                     <option value="" disabled hidden>Choose a year</option>
                     {selectYear}
                 </select>
-                <DraftYear selectYear={this.state.selectYear}/>
                 <div className="category-input-row">
                     <form id="category-input-form">
                         <input className="category-input" id="round-input" placeholder="Round" name="round" value={this.state.round} onChange={this.handleChange}/>
