@@ -4,10 +4,31 @@ import "./draftyear.css"
 
 class DraftYear extends Component{
     render(){
+        const draftDetails = this.props.draftDetails.map((detail, i) => {
+            return(
+                <div key={i} className="draft-row">
+                    <div className="category">
+                        {detail.round}
+                    </div>
+                    <div className="category">
+                        {detail.pick}
+                    </div>
+                    <div className="category">
+                        {detail.team}
+                    </div>
+                    <div className="category">
+                        {detail.selection}
+                    </div>
+                    {/* <div className="category" id="remove-button-container">
+                        <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                    </div> */}
+                </div>
+            )
+        })
         return(
             <div id="draft-year-container">
                 <div className="header" id="year-header">
-                    YEAR GOES HERE
+                    {this.props.selectYear}
                 </div>
                 <div className="category-header-row">
                     <div className="category" id="round">
@@ -23,6 +44,7 @@ class DraftYear extends Component{
                         Selection
                     </div>
                 </div>
+                {draftDetails}
             </div>
         )
     }

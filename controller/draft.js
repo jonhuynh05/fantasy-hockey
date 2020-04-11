@@ -6,7 +6,6 @@ const DraftYear = require("../models/DraftYear")
 
 router.get("/", async (req, res) => {
     try{
-        console.log("hits")
         const allYears = await DraftYear.find({})
         const yearList = []
         for (let i = 0; i < allYears.length; i++){
@@ -21,7 +20,6 @@ router.get("/", async (req, res) => {
 
 router.get("/:year", async(req, res) => {
     try{
-        console.log(req.params.year, "paraams")
         const year = await DraftYear.findOne({year: req.params.year})
         const allDetails = []
         for (let i = 0; i < year.details.length; i++){

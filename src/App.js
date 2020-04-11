@@ -190,7 +190,7 @@ class App extends Component {
           <Route exact path={"/champions"} render={() => <Champions />}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
           <Route exact path={"/draft-history"} render={() => <DraftHistory selectYear={this.state.selectYear} getDraftDetails={this.state.getDraftDetails} handleSelect={this.handleSelect}/>}/>
-          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear draftDetails={this.state.draftDetails}/>}/>
+          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear draftDetails={this.state.draftDetails} selectYear={this.state.selectYear}/>}/>
         </Switch>
       </div>
     )
