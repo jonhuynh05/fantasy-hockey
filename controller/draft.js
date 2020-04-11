@@ -17,6 +17,16 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/:draftyear", async(req, res) => {
+    try{
+        const year = await DraftYear.findOne({year: req.params.draftyear})
+        console.log(year)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 
 router.post("/new", async (req, res) => {
     try{

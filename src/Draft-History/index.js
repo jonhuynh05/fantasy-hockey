@@ -21,6 +21,11 @@ class DraftHistory extends Component{
         })
     }
 
+    async getDraftDetails () {
+        const details = await(await fetch(`/drafts/${this.state.selectYear}`))
+        console.log(details)
+    }
+
     async componentDidMount(){
         this.getDraftYears()
     }
@@ -55,17 +60,19 @@ class DraftHistory extends Component{
         })
     }
 
-    handleSelect = (e) => {
+    handleSelect = async (e) => {
         this.setState({
             selectYear: e.currentTarget.value
         })
+        await this.getDraftDetails()
+        // this.props.history.push(`/draft-history/${this.state.selectYear}`)
     }
 
     render(){
 
         const selectYear = this.state.years.map((year, i) => {
             return(
-                <option onSelect={this.handleSelect} key={i} value={year._id}>
+                <option onSelect={this.handleSelect} key={i} value={year.year}>
                     {year.year}
                 </option>
             )
