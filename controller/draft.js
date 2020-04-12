@@ -11,6 +11,16 @@ router.get("/", async (req, res) => {
         for (let i = 0; i < allYears.length; i++){
             yearList.push(allYears[i])
         }
+        function compare(a, b){
+            if(a.year < b.year){
+                return -1
+            }
+            if(a.year > b.year){
+                return 1
+            }
+            return 0
+        }
+        yearList.sort(compare)
         res.json(yearList)
     }
     catch(err){
@@ -26,8 +36,6 @@ router.get("/:year", async(req, res) => {
             const foundDetails = await Draft.findById(year.details[i])
             allDetails.push(foundDetails)
         }
-        console.log(allDetails, "BEFORE")
-        //START SORTING
         function compare(a, b){
             if(a.pick < b.pick){
                 return -1
@@ -38,7 +46,6 @@ router.get("/:year", async(req, res) => {
             return 0
         }
         allDetails.sort(compare)
-        console.log(allDetails, "AFTER")
         res.json(allDetails)
 
     }
