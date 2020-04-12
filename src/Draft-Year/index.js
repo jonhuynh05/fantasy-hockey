@@ -8,7 +8,7 @@ class DraftYear extends Component{
         draftDetails: []
     }
 
-    async componentDidMount(){ 
+    async getDraftDetails (){
         await fetch(`/drafts/${this.props.match.params.draftyear}`)
         .then(async res => {
             const response = await res.json()
@@ -16,6 +16,22 @@ class DraftYear extends Component{
             draftDetails: response
             })
         })
+    }
+
+    async componentDidMount(){ 
+        this.getDraftDetails()
+    }
+
+    handleDelete = async (e) => {
+        await fetch(`/drafts/remove/`, {
+            method: "DELETE",
+            credentials: "include",
+            body: JSON.stringify(this.state.draftDetails[e.currentTarget.value]),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+        this.getDraftDetails()
     }
 
     render(){
@@ -34,9 +50,9 @@ class DraftYear extends Component{
                         <div className="category">
                             {detail.selection}
                         </div>
-                        {/* <div className="category" id="remove-button-container">
+                        <div className="category" id="remove-button-container">
                             <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
-                        </div> */}
+                        </div>
                     </div>
                 )
             })

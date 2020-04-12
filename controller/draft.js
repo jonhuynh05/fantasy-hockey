@@ -30,12 +30,15 @@ router.get("/", async (req, res) => {
 
 router.get("/:year", async(req, res) => {
     try{
+        req.session.year = req.params.year
         const year = await DraftYear.findOne({year: req.params.year})
         const allDetails = []
         for (let i = 0; i < year.details.length; i++){
             const foundDetails = await Draft.findById(year.details[i])
+            console.log(foundDetails, "FOUND")
             allDetails.push(foundDetails)
         }
+        console.log(allDetails)
         function compare(a, b){
             if(a.pick < b.pick){
                 return -1
@@ -103,16 +106,22 @@ router.post("/new", async (req, res) => {
     }
 })
 
-// router.delete("/remove", async (req, res) => {
-//     try{
-//         await Trade.findByIdAndDelete(req.body.id)
-//         res.json({
-//             message: "Removed."
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-// })
+router.delete("/remove", async (req, res) => {
+    try{
+        console.log(req.body, "BODY")
+        const foundYear = await DraftYear.findOne({year: req.session.year})
+        console.log(foundYear, "YEAR")
+        const foundDetails = await Draft.findById(req.body._id)
+        foundYear.details.remove(foundDetails._id)
+        await foundYear.save()
+        const deleteDetails = await Draft.findByIdAndDelete(req.body._id)
+        res.json({
+            message: "Removed."
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 
 module.exports = router
