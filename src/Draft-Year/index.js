@@ -22,7 +22,21 @@ class DraftYear extends Component{
         this.getDraftDetails()
     }
 
-    handleDelete = async (e) => {
+    handleDeleteYear = async (e) => {
+        await fetch(`/drafts/${this.props.match.params.draftyear}/remove`, {
+            method: "DELETE",
+            credentials: "include",
+            body: JSON.stringify(this.state.draftDetails),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+          .then(res => {
+            this.props.history.push(`/draft-history`)
+          })
+    }
+
+    handleDeleteDetails = async (e) => {
         await fetch(`/drafts/remove/`, {
             method: "DELETE",
             credentials: "include",
@@ -51,7 +65,7 @@ class DraftYear extends Component{
                             {detail.selection}
                         </div>
                         <div className="category" id="remove-button-container">
-                            <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                            <button onClick={this.handleDeleteDetails} value={i} id="remove-button">Remove</button>
                         </div>
                     </div>
                 )
@@ -76,6 +90,9 @@ class DraftYear extends Component{
                     </div>
                 </div>
                 {draftDetails}
+                <div className="category" id="remove-button-container">
+                    <button onClick={this.handleDeleteYear} id="remove-button">Remove Draft</button>
+                </div>
             </div>
         )
     }
