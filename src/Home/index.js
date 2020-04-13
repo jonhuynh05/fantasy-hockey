@@ -4,7 +4,18 @@ import "./home.css"
 
 class Home extends Component{
     state = {
-        imgURL: ""
+        imgURL: "",
+        imgUpload: ""
+    }
+
+    async componentDidMount () {
+        await fetch(`/home`)
+        .then(async res => {
+            const response = await res.json()
+            this.setState({
+                imgURL: response
+            })
+        })
     }
 
     handleChange = (e) => {
@@ -14,7 +25,24 @@ class Home extends Component{
     }
 
     handleUpload = async (e) => {
-        await fetch("/home")
+        e.preventDefault()
+        this.setState({
+            imgURL: this.state.imgUpload
+        })
+        await fetch(`/home/new`, {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(this.state),
+            headers: {
+              "Content-Type": "application/json"
+            }
+        })
+        .then(async res => {
+            this.setState({
+                imgUpload: "",
+            })
+            // this.getChampList()
+        })
     }
 
     render(){
@@ -35,7 +63,7 @@ class Home extends Component{
                 } */}
                 <div className="category-input-row">
                     <form id="category-input-form">
-                        <input className="category-input" id="image-input" placeholder="Image URL" name="imgURL" value={this.state.imgURL} onChange={this.handleChange}/>
+                        <input className="category-input" id="image-input" placeholder="Image URL" name="imgUpload" value={this.state.imgUpload} onChange={this.handleChange}/>
                         <button onClick={this.handleUpload}id="image-submit-button">Submit</button>
                     </form>
                 </div>
