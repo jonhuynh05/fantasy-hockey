@@ -64,9 +64,15 @@ class DraftYear extends Component{
                         <div className="category">
                             {detail.selection}
                         </div>
-                        <div className="category" id="remove-button-container">
-                            <button onClick={this.handleDeleteDetails} value={i} id="remove-button">Remove</button>
-                        </div>
+                        {
+                            this.props.isLoggedIn
+                            ?
+                            <div className="category" id="remove-button-container">
+                                <button onClick={this.handleDeleteDetails} value={i} id="remove-button">Remove</button>
+                            </div>
+                            :
+                            null
+                        }
                     </div>
                 )
             })
@@ -90,9 +96,15 @@ class DraftYear extends Component{
                     </div>
                 </div>
                 {draftDetails}
-                <div className="category" id="remove-button-container">
-                    <button onClick={this.handleDeleteYear} id="remove-button">Remove Draft</button>
-                </div>
+                {
+                    this.props.isLoggedIn
+                    ?
+                    <div className="category" id="remove-button-container">
+                        <button onClick={this.handleDeleteYear} id="remove-button">Remove Draft</button>
+                    </div>
+                    :
+                    null
+                }
             </div>
         )
     }

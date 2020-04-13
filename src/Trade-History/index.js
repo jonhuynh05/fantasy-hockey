@@ -85,9 +85,15 @@ class TradeHistory extends Component{
                     <div className="category" id="date">
                         {trade.date}
                     </div>
-                    <div className="category" id="remove-button-container">
-                        <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
-                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div className="category" id="remove-button-container">
+                            <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                        </div>
+                        :
+                        null
+                    }
                 </div>
             )
         })
@@ -112,15 +118,21 @@ class TradeHistory extends Component{
                     </div>
                 </div>
                 {trades}
-                <div className="category-input-row">
-                    <form id="category-input-form">
-                        <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange}/>
-                        <input className="category-input" id="arrivals-input" placeholder="Arrivals" name="arrivals" value={this.state.arrivals} onChange={this.handleChange}/>
-                        <input className="category-input" id="departures-input" placeholder="Departures" name="departures" value={this.state.departures} onChange={this.handleChange}/>
-                        <input className="category-input" id="date-input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange}/>
-                        <button onClick={this.handleSubmit}id="trade-submit-button">Submit</button>
-                    </form>
-                </div>
+                {
+                    this.props.isLoggedIn
+                    ?
+                    <div className="category-input-row">
+                        <form id="category-input-form">
+                            <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange}/>
+                            <input className="category-input" id="arrivals-input" placeholder="Arrivals" name="arrivals" value={this.state.arrivals} onChange={this.handleChange}/>
+                            <input className="category-input" id="departures-input" placeholder="Departures" name="departures" value={this.state.departures} onChange={this.handleChange}/>
+                            <input className="category-input" id="date-input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange}/>
+                            <button onClick={this.handleSubmit}id="trade-submit-button">Submit</button>
+                        </form>
+                    </div>
+                    :
+                    null
+                }
             </div>
         )
     }

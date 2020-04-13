@@ -76,9 +76,15 @@ class Champions extends Component{
                     <div className="category" id="winner-year">
                         {champion.year}
                     </div>
-                    <div className="category" id="remove-button-container">
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div className="category" id="remove-button-container">
                         <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
-                    </div>
+                        </div>
+                        :
+                        null
+                    }
                 </div>
             )
         })
@@ -97,13 +103,19 @@ class Champions extends Component{
                     </div>
                 </div>
                 {champions}
-                <div className="category-input-row">
-                    <form id="category-input-form">
-                        <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient" value={this.state.recipient} onChange={this.handleChange}/>
-                        <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange}/>
-                        <button onClick={this.handleSubmit}id="champion-submit-button">Submit</button>
-                    </form>
-                </div>
+                {
+                    this.props.isLoggedIn
+                    ?
+                    <div className="category-input-row">
+                        <form id="category-input-form">
+                            <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient" value={this.state.recipient} onChange={this.handleChange}/>
+                            <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange}/>
+                            <button onClick={this.handleSubmit}id="champion-submit-button">Submit</button>
+                        </form>
+                    </div>
+                    :
+                    null
+                }
             </div>
         )
     }

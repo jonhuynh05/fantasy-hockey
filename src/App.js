@@ -162,13 +162,13 @@ class App extends Component {
         }
         <NavBar />
         <Switch>
-          <Route exact path={"/"} render={() => <Home />}/>
+          <Route exact path={"/"} render={() => <Home isLoggedIn={this.state.isLoggedIn}/>}/>
           <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister} handleRemove={this.handleRemove}/>}/>
-          <Route exact path={"/about"} render={() => <About />}/>
-          <Route exact path={"/champions"} render={() => <Champions />}/>
-          <Route exact path={"/trade-history"} render={() => <TradeHistory />}/>
-          <Route exact path={"/draft-history"} render={() => <DraftHistory />}/>
-          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear />}/>
+          <Route exact path={"/about"} render={() => <About isLoggedIn={this.state.isLoggedIn}/>}/>
+          <Route exact path={"/champions"} render={() => <Champions isLoggedIn={this.state.isLoggedIn}/>}/>
+          <Route exact path={"/trade-history"} render={() => <TradeHistory isLoggedIn={this.state.isLoggedIn}/>}/>
+          <Route exact path={"/draft-history"} render={() => <DraftHistory isLoggedIn={this.state.isLoggedIn}/>}/>
+          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear isLoggedIn={this.state.isLoggedIn}/>}/>
         </Switch>
       </div>
     )
