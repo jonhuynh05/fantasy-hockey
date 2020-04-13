@@ -54,19 +54,18 @@ class Home extends Component{
                 <div>
                     <img src={this.state.imgURL}></img>
                 </div>
-                {/* {
+                {
                     this.props.isLoggedIn
                     ?
-                    STUFF HERE
+                    <div className="category-input-row">
+                        <form id="category-input-form">
+                            <input className="category-input" id="image-input" placeholder="Image URL" name="imgUpload" value={this.state.imgUpload} onChange={this.handleChange}/>
+                            <button onClick={this.handleUpload}id="image-submit-button">Submit</button>
+                        </form>
+                    </div>
                     :
                     null
-                } */}
-                <div className="category-input-row">
-                    <form id="category-input-form">
-                        <input className="category-input" id="image-input" placeholder="Image URL" name="imgUpload" value={this.state.imgUpload} onChange={this.handleChange}/>
-                        <button onClick={this.handleUpload}id="image-submit-button">Submit</button>
-                    </form>
-                </div>
+                }
             </div>
         )
     }
