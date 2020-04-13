@@ -52,7 +52,7 @@ class Home extends Component{
                     All Hail 2018 Champion, Evil Empire!
                 </div>
                 <div>
-                    <img src={this.state.imgURL}></img>
+                    <img src={this.state.imgURL} alt={this.state.imgURL}></img>
                 </div>
                 {
                     this.props.isLoggedIn
