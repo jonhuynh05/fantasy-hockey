@@ -3,6 +3,7 @@
     background-color: black;
 }
 
+
 .link-tab{
     padding: 10px;
     background-color: black;
@@ -10,6 +11,7 @@
 
 .link-tab:hover{
     background-color: blue;
+    /* transform: translateX(-100%); */
 }
 
 .nav-link {
@@ -17,6 +19,28 @@
     color: white;
     margin: 0 auto;
 
+}
+
+
+#navbar-mobile-menu{
+    text-align: right;
+}
+
+#mobile-nav-container{
+    background-color: black;
+}
+
+#mobile-top-row{
+    display: flex;
+}
+
+#mobile-header{
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px
 }
 
 .hamburger-bars{
@@ -27,7 +51,8 @@
 }
   
 #hamburger-stack{
+    width: 30px;
     padding: 10px;
     cursor: pointer;
-    margin-left: auto;
+    background-color: black;
 }
