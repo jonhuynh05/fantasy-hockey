@@ -18,3 +18,16 @@
     margin: 0 auto;
 
 }
+
+.hamburger-bars{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+  
+#hamburger-stack{
+    padding: 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
