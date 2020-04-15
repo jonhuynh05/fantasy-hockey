@@ -19,6 +19,18 @@ class NavBar extends Component{
         window.addEventListener("resize", this.updateWindowSize)
     }
 
+    handleOpen = () => {
+        this.setState({
+            open: true
+        })
+    }
+
+    handleClose = () => {
+        this.setState({
+            open: false
+        })
+    }
+
     render(){
         return(
             <>
@@ -30,13 +42,23 @@ class NavBar extends Component{
                             <div id="mobile-header">
                                 L x L
                             </div>
-                            <div id="hamburger-stack" onClick={this.handleClose}>
+                            <div id="hamburger-stack" onClick={this.handleOpen}>
                                 <div className="hamburger-bars"></div>
                                 <div className="hamburger-bars"></div>
                                 <div className="hamburger-bars"></div>
                             </div>
                         </div>
-                        <div id="navbar-mobile-menu">
+                        <div id=
+                            {
+
+                                this.state.open
+                                ?
+                                "navbar-mobile-menu-open"
+                                :
+                                "navbar-mobile-menu"
+                            
+                            }
+                        >
                             <Link to="/" className="nav-link" id="home-link">
                                 <div className="link-tab">
                                     League of Leagues
