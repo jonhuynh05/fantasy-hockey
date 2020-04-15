@@ -42,7 +42,15 @@ class NavBar extends Component{
                             <div id="mobile-header">
                                 L x L
                             </div>
-                            <div id="hamburger-stack" onClick={this.handleOpen}>
+                            <div id="hamburger-stack" onClick=
+                                {
+                                    this.state.open
+                                    ?
+                                    this.handleClose
+                                    :
+                                    this.handleOpen
+                                }
+                            >
                                 <div className="hamburger-bars"></div>
                                 <div className="hamburger-bars"></div>
                                 <div className="hamburger-bars"></div>
