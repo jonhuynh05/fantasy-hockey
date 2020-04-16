@@ -48,8 +48,6 @@
     transition: color 0.3s linear;
 }
 
-
-
 #mobile-nav-container{
     background-color: black;
 }
@@ -115,4 +113,12 @@
     cursor: pointer;
     background-color: black;
     z-index: 10;
+}
+
+#hamburger-stack:hover .hamburger-bars:not(:hover){
+    background-color: blue;
+}
+
+.hamburger-bars:hover{
+    background-color: blue;
 }
