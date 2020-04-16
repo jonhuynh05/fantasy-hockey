@@ -69,7 +69,15 @@ class Champions extends Component{
 
         const champions = this.state.recipients.map((champion, i) => {
             return(
-                <div key={i} className="champion-row">
+                <div key={i} className=
+                    {
+                        i%2 === 0
+                        ?
+                        "champion-row-1"
+                        :
+                        "champion-row-2"
+                    }
+                >
                     <div className="category" id="champion">
                         {champion.recipient}
                     </div>
