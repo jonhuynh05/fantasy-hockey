@@ -72,7 +72,7 @@ class TradeHistory extends Component{
 
         const trades = this.state.trades.map((trade, i) => {
             return(
-                <div key={i} id="trade-row-with-delete">
+                <div key={i} className="row-with-delete">
                     <div key={i} className=
                         {
                             i%2 === 0
@@ -113,7 +113,7 @@ class TradeHistory extends Component{
                 <div className="header" id="trade-header">
                     League of Leagues Trades: A History
                 </div>
-                <div id="row-with-spacer">
+                <div className="row-with-spacer">
                     <div className="category-header-row">
                         <div className="category" id="team">
                             Team

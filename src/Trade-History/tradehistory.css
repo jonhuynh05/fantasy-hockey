@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-#trade-row-with-delete{
+.row-with-delete{
     display: flex;
 }
 
@@ -24,12 +24,12 @@
     background-color: rgb(255, 83, 83);
 }
 
-#row-with-spacer{
+.row-with-spacer{
     display: flex;
 }
 
 #trade-header-spacer{
-    width: 89px;
+    width: 95px;
     height: 48px;
     background-color: white;
 }

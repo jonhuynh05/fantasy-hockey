@@ -69,26 +69,28 @@ class Champions extends Component{
 
         const champions = this.state.recipients.map((champion, i) => {
             return(
-                <div key={i} className=
-                    {
-                        i%2 === 0
-                        ?
-                        "row-1"
-                        :
-                        "row-2"
-                    }
-                >
-                    <div className="category" id="champion">
-                        {champion.recipient}
-                    </div>
-                    <div className="category" id="winner-year">
-                        {champion.year}
+                <div key={i} className="row-with-delete">
+                    <div key={i} className=
+                        {
+                            i%2 === 0
+                            ?
+                            "row-1"
+                            :
+                            "row-2"
+                        }
+                    >
+                        <div className="category" id="champion">
+                            {champion.recipient}
+                        </div>
+                        <div className="category" id="winner-year">
+                            {champion.year}
+                        </div>
                     </div>
                     {
                         this.props.isLoggedIn
                         ?
-                        <div className="category" id="remove-button-container">
-                        <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                        <div className="remove-button-container">
+                        <button onClick={this.handleDelete} value={i} className="remove-button">Remove</button>
                         </div>
                         :
                         null
@@ -102,13 +104,23 @@ class Champions extends Component{
                 <div className="header" id="champions-header">
                     Stanley Jr. Recipients
                 </div>
-                <div className="category-header-row">
-                    <div className="category" id="recipient">
-                        Recipient
+                <div className="row-with-spacer">
+                    <div className="category-header-row">
+                        <div className="category" id="recipient">
+                            Recipient
+                        </div>
+                        <div className="category" id="year">
+                            Year
+                        </div>
                     </div>
-                    <div className="category" id="year">
-                        Year
-                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div id="trade-header-spacer">
+                        </div>
+                        :
+                        null
+                    }
                 </div>
                 {champions}
                 {
