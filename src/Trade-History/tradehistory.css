@@ -1,3 +1,34 @@
 #trade-history-container{
     text-align: center;
 }
+
+#trade-row-with-delete{
+    display: flex;
+}
+
+.remove-button-container{
+    margin: 0 20px
+}
+
+.remove-button{
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.2s linear;
+    transform: translateY(50%)
+}
+
+.remove-button:hover{
+    background-color: rgb(255, 83, 83);
+}
+
+#row-with-spacer{
+    display: flex;
+}
+
+#trade-header-spacer{
+    width: 89px;
+    height: 48px;
+    background-color: white;
+}

@@ -1,7 +1,7 @@
 .header{
   font-weight: bolder;
   font-size: 30px;
-  margin: 15px 15px 0 15px;
+  margin: 20px auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

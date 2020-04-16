@@ -73,9 +73,9 @@ class Champions extends Component{
                     {
                         i%2 === 0
                         ?
-                        "champion-row-1"
+                        "row-1"
                         :
-                        "champion-row-2"
+                        "row-2"
                     }
                 >
                     <div className="category" id="champion">

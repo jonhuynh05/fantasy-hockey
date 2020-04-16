@@ -72,24 +72,34 @@ class TradeHistory extends Component{
 
         const trades = this.state.trades.map((trade, i) => {
             return(
-                <div key={i} className="champion-row">
-                    <div className="category" id="team">
-                        {trade.team}
-                    </div>
-                    <div className="category" id="arrivals">
-                        {trade.arrivals}
-                    </div>
-                    <div className="category" id="departures">
-                        {trade.departures}
-                    </div>
-                    <div className="category" id="date">
-                        {trade.date}
-                    </div>
+                <div key={i} id="trade-row-with-delete">
+                    <div key={i} className=
+                        {
+                            i%2 === 0
+                            ?
+                            "row-1"
+                            :
+                            "row-2"
+                        }
+                    >
+                        <div className="category" id="team">
+                            {trade.team}
+                        </div>
+                        <div className="category" id="arrivals">
+                            {trade.arrivals}
+                        </div>
+                        <div className="category" id="departures">
+                            {trade.departures}
+                        </div>
+                        <div className="category" id="date">
+                            {trade.date}
+                        </div>
+                    </div> 
                     {
                         this.props.isLoggedIn
                         ?
-                        <div className="category" id="remove-button-container">
-                            <button onClick={this.handleDelete} value={i} id="remove-button">Remove</button>
+                        <div className="remove-button-container">
+                            <button onClick={this.handleDelete} value={i} className="remove-button">Remove</button>
                         </div>
                         :
                         null
@@ -103,19 +113,29 @@ class TradeHistory extends Component{
                 <div className="header" id="trade-header">
                     League of Leagues Trades: A History
                 </div>
-                <div className="category-header-row">
-                    <div className="category" id="team">
-                        Team
+                <div id="row-with-spacer">
+                    <div className="category-header-row">
+                        <div className="category" id="team">
+                            Team
+                        </div>
+                        <div className="category" id="acquisition">
+                            Arrivals
+                        </div>
+                        <div className="category" id="departure">
+                            Departures
+                        </div>
+                        <div className="category" id="departure">
+                            Date
+                        </div>
                     </div>
-                    <div className="category" id="acquisition">
-                        Arrivals
-                    </div>
-                    <div className="category" id="departure">
-                        Departures
-                    </div>
-                    <div className="category" id="departure">
-                        Date
-                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div id="trade-header-spacer">
+                        </div>
+                        :
+                        null
+                    }
                 </div>
                 {trades}
                 {
