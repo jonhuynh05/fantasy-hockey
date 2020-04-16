@@ -3,16 +3,6 @@
     background-color: black;
 }
 
-
-/* .link-tab{
-    padding: 10px;
-    background-color: black;
-} */
-
-/* .link-tab:hover{
-    background-color: blue;
-} */
-
 .nav-link {
     text-decoration: none;
     color: white;
@@ -26,7 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* height: 100vh; */
     text-align: left;
     padding: 25px;
     position: absolute;
@@ -42,7 +31,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* height: 100vh; */
     text-align: left;
     padding: 25px;
     position: absolute;
@@ -54,7 +42,6 @@
 
 .link-tab{
     font-size: 18px;
-    /* text-transform: uppercase; */
     padding: 2rem 0;
     font-weight: bold;
     text-decoration: none;
@@ -120,8 +107,6 @@
     transform: translateX(8px) rotate(-55deg) 
 }
 
-
-  
 #hamburger-stack{
     position: absolute;
     right: 0;

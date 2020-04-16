@@ -39,9 +39,11 @@ class NavBar extends Component{
                     ?
                     <div id="mobile-nav-container">
                         <div id="mobile-top-row">
-                            <div id="mobile-header">
-                                L x L
-                            </div>
+                            <Link to="/" className="nav-link" id="home-link" onClick={this.handleClose}>
+                                <div id="mobile-header">
+                                    L x L
+                                </div>
+                            </Link>
                             <div id="hamburger-stack" onClick=
                                 {
                                     this.state.open
@@ -91,27 +93,27 @@ class NavBar extends Component{
                             
                             }
                         >
-                            <Link to="/" className="nav-link" id="home-link">
+                            <Link to="/" className="nav-link" id="home-link" onClick={this.handleClose}>
                                 <div className="link-tab">
                                     League of Leagues
                                 </div>
                             </Link>
-                            <Link to="/about" className="nav-link" id="about-link">
+                            <Link to="/about" className="nav-link" id="about-link" onClick={this.handleClose}>
                                 <div className="link-tab">
                                     About
                                 </div>
                             </Link>
-                            <Link to="/champions" className="nav-link" id="champions-link">
+                            <Link to="/champions" className="nav-link" id="champions-link" onClick={this.handleClose}>
                                 <div className="link-tab">
                                         Champions
                                 </div>
                             </Link>
-                            <Link to="/trade-history" className="nav-link" id="trade-link">
+                            <Link to="/trade-history" className="nav-link" id="trade-link" onClick={this.handleClose}>
                                 <div className="link-tab">
                                         Trade History
                                 </div>
                             </Link>
-                            <Link to="/draft-history" className="nav-link" id="draft-link">
+                            <Link to="/draft-history" className="nav-link" id="draft-link" onClick={this.handleClose}>
                                 <div className="link-tab">
                                         Draft History
                                 </div>
