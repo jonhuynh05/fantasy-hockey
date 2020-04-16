@@ -51,24 +51,34 @@ class DraftYear extends Component{
     render(){
             const draftDetails = this.state.draftDetails.map((detail, i) => {
                 return(
-                    <div key={i} className="draft-row">
-                        <div className="category">
-                            {detail.round}
-                        </div>
-                        <div className="category">
-                            {detail.pick}
-                        </div>
-                        <div className="category">
-                            {detail.team}
-                        </div>
-                        <div className="category">
-                            {detail.selection}
+                    <div key={i} className="row-with-delete">
+                        <div key={i} className=
+                            {
+                                i%2 === 0
+                                ?
+                                "row-1"
+                                :
+                                "row-2"
+                            }
+                        >
+                            <div className="category">
+                                {detail.round}
+                            </div>
+                            <div className="category">
+                                {detail.pick}
+                            </div>
+                            <div className="category">
+                                {detail.team}
+                            </div>
+                            <div className="category">
+                                {detail.selection}
+                            </div>
                         </div>
                         {
                             this.props.isLoggedIn
                             ?
-                            <div className="category" id="remove-button-container">
-                                <button onClick={this.handleDeleteDetails} value={i} id="remove-button">Remove</button>
+                            <div className="remove-button-container">
+                                <button onClick={this.handleDeleteDetails} value={i} className="remove-button">Remove</button>
                             </div>
                             :
                             null
@@ -81,19 +91,29 @@ class DraftYear extends Component{
                 <div className="header" id="year-header">
                     {this.props.selectYear}
                 </div>
-                <div className="category-header-row">
-                    <div className="category" id="round">
-                        Round
+                <div className="row-with-spacer">
+                    <div className="category-header-row">
+                        <div className="category" id="round">
+                            Round
+                        </div>
+                        <div className="category" id="pick">
+                            Pick
+                        </div>
+                        <div className="category" id="team">
+                            Team
+                        </div>
+                        <div className="category" id="selection">
+                            Selection
+                        </div>
                     </div>
-                    <div className="category" id="pick">
-                        Pick
-                    </div>
-                    <div className="category" id="team">
-                        Team
-                    </div>
-                    <div className="category" id="selection">
-                        Selection
-                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div id="trade-header-spacer">
+                        </div>
+                        :
+                        null
+                    }
                 </div>
                 {draftDetails}
                 {
