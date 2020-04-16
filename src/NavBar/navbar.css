@@ -71,6 +71,7 @@
     display: flex;
     position: relative;
     background-color: black;
+    width: 100%;
     z-index: 10;
 }
 
@@ -88,7 +89,38 @@
     height: 3px;
     background-color: white;
     margin: 5px 0;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
 }
+
+.hamburger-bars-open{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburger-bars-open:first-child{
+    transform: translateY(18px);
+    width: 10px
+}
+
+.hamburger-bars-open:nth-child(2){
+    opacity: 0;
+    transform: translateX(20px)
+}
+
+.hamburger-bars-open:nth-child(3){
+    width: 25px;
+    transform-origin: 3px;
+    transform: translateX(8px) rotate(-55deg) 
+}
+
+
   
 #hamburger-stack{
     position: absolute;

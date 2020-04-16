@@ -51,9 +51,33 @@ class NavBar extends Component{
                                     this.handleOpen
                                 }
                             >
-                                <div className="hamburger-bars"></div>
-                                <div className="hamburger-bars"></div>
-                                <div className="hamburger-bars"></div>
+                                <div className=
+                                    {
+                                        this.state.open
+                                        ?
+                                        "hamburger-bars-open"
+                                        :
+                                        "hamburger-bars"
+                                    }
+                                ></div>
+                                <div className=
+                                    {
+                                        this.state.open
+                                        ?
+                                        "hamburger-bars-open"
+                                        :
+                                        "hamburger-bars"
+                                    }
+                                ></div>
+                                <div className=
+                                    {
+                                        this.state.open
+                                        ?
+                                        "hamburger-bars-open"
+                                        :
+                                        "hamburger-bars"
+                                    }
+                                ></div>
                             </div>
                         </div>
                         <div id=
