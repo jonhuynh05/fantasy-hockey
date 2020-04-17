@@ -130,7 +130,7 @@ class Champions extends Component{
                         <form id="category-input-form">
                             <input className="category-input" id="recipient-input" placeholder="Recipient" name="recipient" value={this.state.recipient} onChange={this.handleChange}/>
                             <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange}/>
-                            <button onClick={this.handleSubmit}id="champion-submit-button">Submit</button>
+                            <button onClick={this.handleSubmit} className="submit-button" id="champion-submit-button">Submit</button>
                         </form>
                     </div>
                     :

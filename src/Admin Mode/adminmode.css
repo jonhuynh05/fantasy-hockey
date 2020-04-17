@@ -3,17 +3,3 @@
     padding: 10px;
     text-align: center;
 }
-
-#log-out{
-    margin-top: 10px;
-    border: 1px solid black;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    padding: 5px;
-}
-
-#log-out:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-}

@@ -4,6 +4,25 @@
   margin: 20px auto;
 }
 
+input{
+  border: 1px solid black;
+  padding: 5px 0;
+}
+
+.submit-button{
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  transition: all 0.2s linear;
+  margin: 10px;
+}
+
+.submit-button:hover{
+  background-color: blue;
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

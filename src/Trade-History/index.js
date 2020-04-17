@@ -147,7 +147,7 @@ class TradeHistory extends Component{
                             <input className="category-input" id="arrivals-input" placeholder="Arrivals" name="arrivals" value={this.state.arrivals} onChange={this.handleChange}/>
                             <input className="category-input" id="departures-input" placeholder="Departures" name="departures" value={this.state.departures} onChange={this.handleChange}/>
                             <input className="category-input" id="date-input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange}/>
-                            <button onClick={this.handleSubmit}id="trade-submit-button">Submit</button>
+                            <button onClick={this.handleSubmit}className="submit-button" id="trade-submit-button">Submit</button>
                         </form>
                     </div>
                     :

@@ -9,7 +9,7 @@ class AdminMode extends Component{
                 <div>
                     Admin mode activated. You now have Gretzky powers.
                 </div>
-                <button id="log-out" onClick={this.props.handleLogout}>Log Out</button>
+                <button onClick={this.props.handleLogout} className="submit-button">Log Out</button>
             </div>
         )
     }

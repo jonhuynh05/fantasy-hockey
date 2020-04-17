@@ -20,6 +20,10 @@
     width: 200px;
 }
 
+.category-input-row{
+    margin: 40px;
+}
+
 #category-input-form{
     text-align: center;
     padding: 0 50px;
