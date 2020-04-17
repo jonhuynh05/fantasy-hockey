@@ -23,6 +23,7 @@
     right: 0;
     transition: transform 0.3s ease-in-out;
     background-color: black;
+    z-index: 5;
 }
 
 #navbar-mobile-menu{
@@ -38,6 +39,8 @@
     right: 0;
     transition: transform 0.3s ease-in-out;
     background-color: black;
+    z-index: 5;
+
 }
 
 .link-tab{
