@@ -72,6 +72,9 @@ class DraftHistory extends Component{
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
+                <div className="sub-header">
+                    Select a year from the menu below to begin.
+                </div>
                 <div className="dropdown">
                     <Dropdown
                         id="ui-dropdown"
