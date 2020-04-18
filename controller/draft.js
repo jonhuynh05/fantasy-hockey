@@ -10,9 +10,12 @@ router.get("/", async (req, res) => {
         const yearList = []
         allYears.forEach((year) => {
             let object = year.toObject()
-            object.value = year.year
-            object.key = year.year
-            object.text = year.year
+            object.option = {
+                "value": year.year,
+                "key": year.year,
+                "text": year.year
+            }
+            console.log(object)
             yearList.push(object)
         })
         function compare(a, b){
@@ -25,7 +28,6 @@ router.get("/", async (req, res) => {
             return 0
         }
         yearList.sort(compare)
-        console.log(yearList, "YEARLIST")
         res.json(yearList)
     }
     catch(err){

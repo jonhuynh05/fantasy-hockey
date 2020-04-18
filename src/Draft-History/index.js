@@ -15,6 +15,7 @@ class DraftHistory extends Component{
 
     async getDraftYears () {
         const yearList = await(await fetch(`/drafts`)).json()
+        console.log(yearList)
         this.setState({
             years: yearList
         })
@@ -27,7 +28,7 @@ class DraftHistory extends Component{
 
     handleChange = (e) => {
         this.setState({
-            [e.currentTarget.name]: e.currentTarget.value
+            [e.currentTarget.name]: e.target.value
         })
     }
 
@@ -56,16 +57,14 @@ class DraftHistory extends Component{
     }
 
     handleSelect = async (e) => {
-        this.props.history.push(`/draft-history/${e.currentTarget.value}`)
+        this.props.history.push(`/draft-history/${e.currentTarget.firstChild.innerHTML}`)
       }
 
     render(){
 
-        const selectYear = this.state.years.map((year, i) => {
+        const options = this.state.years.map((year, i) => {
             return(
-                <option className="select-selected" key={i} value={year.year}>
-                    {year.year}
-                </option>
+                year.option
             )
         })
 
@@ -76,16 +75,15 @@ class DraftHistory extends Component{
                     League of Leagues Drafts: A History
                 </div>
                 <div className="custom-select">
-                    <Dropdown 
+                    <Dropdown
+                        defaultValue=""
+                        onChange={this.handleSelect}
+                        value=""
                         placeholder="Select A Year"
-                        fluid
+                        // fluid
                         selection
-                        options={this.state.years}
+                        options={options}
                     />
-                    <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
-                        <option value="" disabled hidden>Choose a year</option>
-                        {selectYear}
-                    </select>
                 </div>
                 {
                     this.props.isLoggedIn
