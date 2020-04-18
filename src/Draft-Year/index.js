@@ -125,7 +125,7 @@ class DraftYear extends Component{
         return(
             <div id="draft-year-container">
                 <div className="header" id="year-header">
-                    {this.props.selectYear}
+                    {this.props.match.params.draftyear}
                 </div>
                 <div className="row-with-spacer">
                     <div className="category-header-row">
@@ -152,8 +152,6 @@ class DraftYear extends Component{
                     }
                 </div>
                 {draftDetails}
-
-
                 {
                     this.props.isLoggedIn
                     ?
@@ -170,9 +168,6 @@ class DraftYear extends Component{
                     :
                     null
                 }
-
-
-
                 {
                     this.props.isLoggedIn
                     ?
