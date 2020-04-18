@@ -1,0 +1,17 @@
+#draft-header{
+    text-align: center;
+}
+
+.dropdown{
+    text-align: center;
+    margin: 0 auto;
+    width: 80%
+}
+
+#ui-dropdown{
+    text-align: center;
+}
+
+#ui-dropdown > div > div{
+    text-align: center;
+}

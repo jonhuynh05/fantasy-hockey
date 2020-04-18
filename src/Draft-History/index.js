@@ -15,7 +15,6 @@ class DraftHistory extends Component{
 
     async getDraftYears () {
         const yearList = await(await fetch(`/drafts`)).json()
-        console.log(yearList)
         this.setState({
             years: yearList
         })
@@ -70,19 +69,25 @@ class DraftHistory extends Component{
 
         return(
             <div id="draft-history-container">
-                ADD A SINGLE DRAFT HERE
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
-                <div className="custom-select">
+                <div className="dropdown">
                     <Dropdown
-                        defaultValue=""
+                        id="ui-dropdown"
                         onChange={this.handleSelect}
-                        value=""
                         placeholder="Select A Year"
-                        // fluid
+                        fluid
                         selection
-                        options={options}
+                        options={
+                            [{
+                                key: "",
+                                text: "",
+                                value: "",
+                                hidden: "hidden"
+                            },
+                            ...options]
+                        }
                     />
                 </div>
                 {
