@@ -15,7 +15,6 @@ router.get("/", async (req, res) => {
                 "key": year.year,
                 "text": year.year
             }
-            console.log(object)
             yearList.push(object)
         })
         function compare(a, b){

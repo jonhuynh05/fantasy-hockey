@@ -82,9 +82,8 @@ class DraftHistory extends Component{
                         options={
                             [{
                                 key: "",
-                                text: "",
+                                text: "Select A Year",
                                 value: "",
-                                hidden: "hidden"
                             },
                             ...options]
                         }

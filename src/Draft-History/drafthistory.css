@@ -12,6 +12,10 @@
     text-align: center;
 }
 
+#ui-dropdown > div > div:first-child{
+    visibility: hidden;
+}
+
 #ui-dropdown > div > div{
     text-align: center;
 }
