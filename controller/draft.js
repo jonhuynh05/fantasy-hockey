@@ -8,9 +8,13 @@ router.get("/", async (req, res) => {
     try{
         const allYears = await DraftYear.find({})
         const yearList = []
-        for (let i = 0; i < allYears.length; i++){
-            yearList.push(allYears[i])
-        }
+        allYears.forEach((year) => {
+            let object = year.toObject()
+            object.value = year.year
+            object.key = year.year
+            object.text = year.year
+            yearList.push(object)
+        })
         function compare(a, b){
             if(a.year < b.year){
                 return -1
@@ -21,6 +25,7 @@ router.get("/", async (req, res) => {
             return 0
         }
         yearList.sort(compare)
+        console.log(yearList, "YEARLIST")
         res.json(yearList)
     }
     catch(err){

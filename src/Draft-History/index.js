@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import "./drafthistory.css"
+import {Dropdown} from "semantic-ui-react"
 
 class DraftHistory extends Component{
     state = {
@@ -18,6 +19,7 @@ class DraftHistory extends Component{
             years: yearList
         })
     }
+
 
     async componentDidMount(){
         this.getDraftYears()
@@ -61,7 +63,7 @@ class DraftHistory extends Component{
 
         const selectYear = this.state.years.map((year, i) => {
             return(
-                <option key={i} value={year.year}>
+                <option className="select-selected" key={i} value={year.year}>
                     {year.year}
                 </option>
             )
@@ -73,10 +75,18 @@ class DraftHistory extends Component{
                 <div className="header" id="draft-header">
                     League of Leagues Drafts: A History
                 </div>
-                <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
-                    <option value="" disabled hidden>Choose a year</option>
-                    {selectYear}
-                </select>
+                <div className="custom-select">
+                    <Dropdown 
+                        placeholder="Select A Year"
+                        fluid
+                        selection
+                        options={this.state.years}
+                    />
+                    <select onChange={this.handleSelect} placeholder="Select Year" defaultValue="">
+                        <option value="" disabled hidden>Choose a year</option>
+                        {selectYear}
+                    </select>
+                </div>
                 {
                     this.props.isLoggedIn
                     ?
