@@ -90,7 +90,7 @@ class DraftHistory extends Component{
     }
 
     handleDeleteYear = async (e) => {
-        await fetch(`/drafts/${this.props.match.params.draftyear}/remove`, {
+        await fetch(`/drafts/${this.state.selectedYear}/remove`, {
             method: "DELETE",
             credentials: "include",
             body: JSON.stringify(this.state.draftDetails),
@@ -99,7 +99,11 @@ class DraftHistory extends Component{
             }
           })
           .then(res => {
-            this.props.history.push(`/draft-history`)
+              this.setState({
+                  selectedYear: "",
+                  draftDetails: []
+              })
+              this.getDraftYears()
           })
     }
 
