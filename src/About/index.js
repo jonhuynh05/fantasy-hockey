@@ -11,8 +11,25 @@ class About extends Component {
                 </div>
                 <div id="about-description">
                     The League of Leagues is a fantasy hockey league that was started in 2014. Originally a 6-team league, the League of Leagues expanded to 8 teams in 2017.
-
-                    Current Commissioner: Jordan Matsunaga (2014 - present)
+                </div>
+                <div id="about-teams">
+                    <div id="teams-header">
+                        Teams
+                    </div>
+                    Evil Empire - Jordan Matsunaga<br/>
+                    Soft Dump in the Corner - Sasha <br/>Zanjani
+                    Hands Off My Pekka - Pasha Zanjani<br/>
+                    A Girl Has No Team Name - Sarah Hamada<br/>
+                    Black Jesus - Alex Wong<br/>
+                    It's Bill Fucking Murray - Jonathan Huynh<br/>
+                    Samurai Ducks - Tobias Mahonen<br/>
+                    TBD - Jesse Seilhan<br/>
+                </div>              
+                <div id="about-commissioner">
+                    <div id="commissioner-header">
+                        Current Commissioner
+                    </div>
+                    Jordan Matsunaga (2014 - present)
                 </div>
             </div>
         )

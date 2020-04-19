@@ -2,6 +2,17 @@
     text-align: center;
 }
 
-img{
-    width: 100%;
+#home-image{
+    width: 70%;
+}
+
+#teams-header{
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+#commissioner-header{
+    font-weight: bold;
+    margin: 10px;
 }
