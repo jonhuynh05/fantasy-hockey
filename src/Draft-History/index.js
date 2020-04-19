@@ -131,14 +131,22 @@ class DraftHistory extends Component{
         })
         .then(async res => {
             this.setState({
-                year: "",
-                round: "",
-                pick: "",
-                team: "",
-                selection: ""
+                selectedYear: this.state.year
             })
-            this.getDraftYears()
-            this.getMapDetails()
+            await fetch(`/drafts/${this.state.year}`)
+            .then(async res => {
+                const response = await res.json()
+                this.setState({
+                    draftDetails: response,
+                    year: "",
+                    round: "",
+                    pick: "",
+                    team: "",
+                    selection: ""
+                })
+                this.getMapDetails()
+                this.getDraftYears()
+            })
         })
     }
 
