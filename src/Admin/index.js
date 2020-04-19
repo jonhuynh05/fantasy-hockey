@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter} from "react-router-dom"
+import "./admin.css"
 
 class Admin extends Component{
     render(){
@@ -15,14 +16,14 @@ class Admin extends Component{
 
         return(
             <div>
-                <div>
+                <div className="admin-header">
                     Are you the commish? Log in below.
                 </div>
                 <div>
                     {/* IF LOGIN IS TRUE ADD RULE */}
                     <form>
-                        <input onChange={this.props.handleChange} placeholder="Username" name="username" value={this.props.username}></input>
-                        <input onChange={this.props.handleChange}  placeholder="Password" name="password" type="password" value={this.props.password}></input>
+                        <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="username" value={this.props.username}></input>
+                        <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="password" type="password" value={this.props.password}></input>
                         <button onClick={this.props.handleLogin} className="submit-button">Log In</button>
                     </form>
                     {
@@ -33,14 +34,14 @@ class Admin extends Component{
                         this.props.error
                     }
                 </div>
-                <div>
+                <div className="admin-header">
                     Register More Admins
                 </div>
                 <div>
                     {/* IF LOGIN IS TRUE ADD RULE */}
                     <form>
-                        <input onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
-                        <input onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>
+                        <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
+                        <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>
                         <button onClick={this.props.handleRegister} className="submit-button">Add User</button>
                     </form>
                     {
