@@ -9,7 +9,6 @@ import About from "./About"
 import Champions from "./Champions"
 import TradeHistory from "./Trade-History"
 import DraftHistory from "./Draft-History"
-import DraftYear from './Draft-Year';
 
 class App extends Component {
   state={
@@ -168,7 +167,6 @@ class App extends Component {
           <Route exact path={"/champions"} render={() => <Champions isLoggedIn={this.state.isLoggedIn}/>}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory isLoggedIn={this.state.isLoggedIn}/>}/>
           <Route exact path={"/draft-history"} render={() => <DraftHistory isLoggedIn={this.state.isLoggedIn}/>}/>
-          <Route exact path={`/draft-history/:draftyear`} render={() => <DraftYear isLoggedIn={this.state.isLoggedIn}/>}/>
         </Switch>
       </div>
     )

@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom'
 import "./drafthistory.css"
 import {Dropdown} from "semantic-ui-react"
 
+let draftMap = ""
+
 class DraftHistory extends Component{
     state = {
         draftDetails: [],
@@ -12,7 +14,8 @@ class DraftHistory extends Component{
         pick: "",
         team: "",
         selection: "",
-        mapDetails: ""
+        mapDetails: "",
+        selectedYear: ""
     }
 
     async getDraftYears () {
@@ -23,18 +26,61 @@ class DraftHistory extends Component{
     }
 
     async getDraftDetails (){
-        await fetch(`/drafts/${this.props.match.params.draftyear}`)
+        await fetch(`/drafts/${this.state.selectedYear}`)
         .then(async res => {
             const response = await res.json()
             this.setState({
-            draftDetails: response
+                draftDetails: response
             })
+            this.getMapDetails()
         })
     }
 
     async componentDidMount(){
         this.getDraftYears()
-        // this.getDraftDetails()
+    }
+
+    async getMapDetails () {
+        draftMap = this.state.draftDetails.map((detail, i) => {
+            return(
+                <div key={i} className="row-with-delete">
+                    <div key={i} className=
+                        {
+                            i%2 === 0
+                            ?
+                            "row-1"
+                            :
+                            "row-2"
+                        }
+                    >
+                        <div className="category">
+                            {detail.round}
+                        </div>
+                        <div className="category">
+                            {detail.pick}
+                        </div>
+                        <div className="category">
+                            {detail.team}
+                        </div>
+                        <div className="category">
+                            {detail.selection}
+                        </div>
+                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div className="remove-button-container">
+                            <button onClick={this.handleDeleteDetails} value={i} className="remove-button">Remove</button>
+                        </div>
+                        :
+                        null
+                    }
+                </div>
+            )
+        })
+        this.setState({
+            mapDetails: draftMap
+        })
     }
 
     handleChange = (e) => {
@@ -80,8 +126,6 @@ class DraftHistory extends Component{
             }
         })
         .then(async res => {
-            const response = await res.json()
-            console.log(response)
             this.setState({
                 year: "",
                 round: "",
@@ -90,54 +134,21 @@ class DraftHistory extends Component{
                 selection: ""
             })
             this.getDraftYears()
-            // this.getDraftDetails()
+            this.getMapDetails()
         })
     }
 
     handleSelect = async (e) => {
-        this.props.history.push(`/draft-history/${e.currentTarget.firstChild.innerHTML}`)
-    }
-
-    getMapDetails = () => {
-        const draftDetails = this.state.draftDetails.map((detail, i) => {
-            return(
-                <div key={i} className="row-with-delete">
-                    <div key={i} className=
-                        {
-                            i%2 === 0
-                            ?
-                            "row-1"
-                            :
-                            "row-2"
-                        }
-                    >
-                        <div className="category">
-                            {detail.round}
-                        </div>
-                        <div className="category">
-                            {detail.pick}
-                        </div>
-                        <div className="category">
-                            {detail.team}
-                        </div>
-                        <div className="category">
-                            {detail.selection}
-                        </div>
-                    </div>
-                    {
-                        this.props.isLoggedIn
-                        ?
-                        <div className="remove-button-container">
-                            <button onClick={this.handleDeleteDetails} value={i} className="remove-button">Remove</button>
-                        </div>
-                        :
-                        null
-                    }
-                </div>
-            )
-        })
         this.setState({
-            mapDetails: draftDetails
+            selectedYear: e.currentTarget.firstChild.innerHTML
+        })
+        await fetch(`/drafts/${e.currentTarget.firstChild.innerHTML}`)
+        .then(async res => {
+            const response = await res.json()
+            this.setState({
+                draftDetails: response
+            })
+            this.getMapDetails()
         })
     }
 
@@ -155,7 +166,7 @@ class DraftHistory extends Component{
                     League of Leagues Drafts: A History
                 </div>
                 <div className="sub-header">
-                    Select a year from the menu below to begin.
+                    Select a year from the menu below.
                 </div>
                 <div className="dropdown">
                     <Dropdown
@@ -174,6 +185,51 @@ class DraftHistory extends Component{
                         }
                     />
                 </div>
+                {
+                    this.state.draftDetails.length > 0
+                    ?
+                    <div id="draft-year-container">
+                        <div className="header" id="year-header">
+                            {this.state.selectedYear}
+                        </div>
+                        <div className="row-with-spacer">
+                            <div className="category-header-row">
+                                <div className="category" id="round">
+                                    Round
+                                </div>
+                                <div className="category" id="pick">
+                                    Pick
+                                </div>
+                                <div className="category" id="team">
+                                    Team
+                                </div>
+                                <div className="category" id="selection">
+                                    Selection
+                                </div>
+                            </div>
+                            {
+                                this.props.isLoggedIn
+                                ?
+                                <div id="trade-header-spacer">
+                                </div>
+                                :
+                                null
+                            }
+                        </div>
+                        {draftMap}
+                        {
+                            this.props.isLoggedIn
+                            ?
+                            <div className="category" id="remove-draft">
+                                <button onClick={this.handleDeleteYear} className="remove-button">Remove Draft</button>
+                            </div>
+                            :
+                            null
+                        }
+                    </div>
+                    :
+                    null
+                }
                 {
                     this.props.isLoggedIn
                     ?
