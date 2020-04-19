@@ -6,4 +6,26 @@
 .admin-header{
     font-weight: bold;
     margin: 10px;
+    text-align: center;
+}
+
+#registered-admins-container{
+    text-align: center;
+}
+
+#registered-admins{
+    width: 100%
+}
+
+#registered-rows{
+    margin: 10px auto;
+}
+
+#login-form{
+    text-align: center;
+}
+
+#register-form{
+    text-align: center;
+    margin: 0 0 20px 0;
 }

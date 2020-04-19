@@ -18,7 +18,7 @@ class App extends Component {
     newAdminPassword: "",
     error: "",
     newAdminError: "",
-    isLoggedIn: true,
+    isLoggedIn: false,
     masterAcc: false,
     allAdmin: []
   }
@@ -56,23 +56,30 @@ class App extends Component {
     })
     .then(async res => {
       const response = await res.json()
-      if (response.message === "Log in successful."){
+      if(response.master === true){
+        this.setState({
+          masterAcc: true
+        })
+      }
+      if(response.adminList){
+        this.setState({
+          allAdmin: response.adminList
+        })
+      }
+      if(response.message === "Log in successful." && this.state.masterAcc === false){
         this.setState({
           isLoggedIn: true,
           username: "",
           password: ""
         })
-        if(response.master === true){
-          this.setState({
-            masterAcc: true
-          })
-        }
-        //MAKE SURE TO UPDATE BACKENED TO ONLY GIVE MASTER ACCOUNT ACCESS TO USERS
-        if(response.adminList){
-          this.setState({
-            allAdmin: response.adminList
-          })
-        }
+        this.props.history.push("/")
+      }
+      if(response.message === "Log in successful." && this.state.masterAcc === true){
+        this.setState({
+          isLoggedIn: true,
+          username: "",
+          password: ""
+        })
       }
       else{
         this.setState({

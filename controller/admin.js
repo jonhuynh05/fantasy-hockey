@@ -44,12 +44,6 @@ router.post("/login", async(req, res) => {
                 req.session.username = foundAdmin.username
                 if(req.session.username === "thecommissioner"){
                     console.log(Admin, "ADMINS")
-                    res.json({
-                        message: "Log in successful.",
-                        master: true
-                    })
-                }
-                else{
                     const allAdmin = await Admin.find({})
                     const adminList = []
                     for (let i = 0; i < allAdmin.length; i++){
@@ -62,7 +56,14 @@ router.post("/login", async(req, res) => {
                     }
                     res.json({
                         message: "Log in successful.",
+                        master: true,
                         adminList: adminList
+
+                    })
+                }
+                else{
+                    res.json({
+                        message: "Log in successful."
                     })
                 }
             }
