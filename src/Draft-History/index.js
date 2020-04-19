@@ -198,7 +198,7 @@ class DraftHistory extends Component{
                     />
                 </div>
                 {
-                    this.state.draftDetails.length > 0
+                    this.state.selectedYear
                     ?
                     <div id="draft-year-container">
                         <div className="header" id="year-header">
