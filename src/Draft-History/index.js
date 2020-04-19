@@ -5,12 +5,14 @@ import {Dropdown} from "semantic-ui-react"
 
 class DraftHistory extends Component{
     state = {
+        draftDetails: [],
         years: [],
         year: "",
         round: "",
         pick: "",
         team: "",
-        selection: ""
+        selection: "",
+        mapDetails: ""
     }
 
     async getDraftYears () {
@@ -20,15 +22,51 @@ class DraftHistory extends Component{
         })
     }
 
+    async getDraftDetails (){
+        await fetch(`/drafts/${this.props.match.params.draftyear}`)
+        .then(async res => {
+            const response = await res.json()
+            this.setState({
+            draftDetails: response
+            })
+        })
+    }
 
     async componentDidMount(){
         this.getDraftYears()
+        // this.getDraftDetails()
     }
 
     handleChange = (e) => {
         this.setState({
             [e.currentTarget.name]: e.target.value
         })
+    }
+
+    handleDeleteYear = async (e) => {
+        await fetch(`/drafts/${this.props.match.params.draftyear}/remove`, {
+            method: "DELETE",
+            credentials: "include",
+            body: JSON.stringify(this.state.draftDetails),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+          .then(res => {
+            this.props.history.push(`/draft-history`)
+          })
+    }
+
+    handleDeleteDetails = async (e) => {
+        await fetch(`/drafts/remove/`, {
+            method: "DELETE",
+            credentials: "include",
+            body: JSON.stringify(this.state.draftDetails[e.currentTarget.value]),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+        this.getDraftDetails()
     }
 
     handleSubmit = async (e) => {
@@ -52,12 +90,56 @@ class DraftHistory extends Component{
                 selection: ""
             })
             this.getDraftYears()
+            // this.getDraftDetails()
         })
     }
 
     handleSelect = async (e) => {
         this.props.history.push(`/draft-history/${e.currentTarget.firstChild.innerHTML}`)
-      }
+    }
+
+    getMapDetails = () => {
+        const draftDetails = this.state.draftDetails.map((detail, i) => {
+            return(
+                <div key={i} className="row-with-delete">
+                    <div key={i} className=
+                        {
+                            i%2 === 0
+                            ?
+                            "row-1"
+                            :
+                            "row-2"
+                        }
+                    >
+                        <div className="category">
+                            {detail.round}
+                        </div>
+                        <div className="category">
+                            {detail.pick}
+                        </div>
+                        <div className="category">
+                            {detail.team}
+                        </div>
+                        <div className="category">
+                            {detail.selection}
+                        </div>
+                    </div>
+                    {
+                        this.props.isLoggedIn
+                        ?
+                        <div className="remove-button-container">
+                            <button onClick={this.handleDeleteDetails} value={i} className="remove-button">Remove</button>
+                        </div>
+                        :
+                        null
+                    }
+                </div>
+            )
+        })
+        this.setState({
+            mapDetails: draftDetails
+        })
+    }
 
     render(){
 
