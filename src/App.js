@@ -125,6 +125,10 @@ class App extends Component {
         "Content-Type": "application/json"
       }
     })
+    .then(async res => {
+      const response = await res.json()
+      console.log(response)
+    })
 
   }
 

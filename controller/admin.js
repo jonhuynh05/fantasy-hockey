@@ -36,7 +36,32 @@ router.get("/logout", async (req, res) => {
 
 router.put("/edit", async(req, res) => {
     try{
-        console.log(req.body)
+        const foundAdmin = await Admin.findOne({
+            username: req.session.username
+        })
+        if (foundAdmin){
+            if(bcrypt.compareSync(req.body.confirmPassword, foundAdmin.password)){
+                const updatedAdmin = {}
+                updatedAdmin.username = req.session.username
+                const password = req.body.updatePassword
+                const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+                updatedAdmin.password = passwordHash
+                await Admin.findOneAndUpdate({username: req.session.username}, updatedAdmin, {new: true})
+                res.json({
+                    message: "Admin updated."
+                })
+            }
+            else{
+                res.json({
+                    message: "Password incorrect."
+                })
+            }
+        }
+        else{
+            res.json({
+                message: "User not found."
+            })
+        }
     }
     catch(err){
         console.log(err)
