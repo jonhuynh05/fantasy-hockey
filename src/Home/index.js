@@ -59,7 +59,7 @@ class Home extends Component{
                     ?
                     <div className="category-input-row">
                         <form id="category-input-form">
-                            <input className="category-input" id="image-input" placeholder="Image URL" name="imgUpload" value={this.state.imgUpload} onChange={this.handleChange}/>
+                            <input className="category-input" id="image-input" placeholder="Image URL" name="imgUpload" value={this.state.imgUpload} onChange={this.handleChange}  required/>
                             <button onClick={this.handleUpload}id="image-submit-button">Submit</button>
                         </form>
                     </div>

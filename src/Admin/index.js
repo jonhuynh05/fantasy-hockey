@@ -43,8 +43,8 @@ class Admin extends Component{
                         </div>
                         <div id="login-form">
                             <form>
-                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="username" value={this.props.username}></input>
-                                <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="password" type="password" value={this.props.password}></input>
+                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="username" value={this.props.username} required></input>
+                                <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="password" type="password" value={this.props.password} required></input>
                                 <button onClick={this.props.handleLogin} className="submit-button">Log In</button>
                             </form>
                             {
@@ -67,8 +67,8 @@ class Admin extends Component{
                         <div id="register-form">
                             <form>
                                 <input className="admin-input" onChange={this.props.handleChange} placeholder="New Password" name="updatePassword"
-                                type="password" value={this.props.updatePassword}></input>
-                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Old Password" name="confirmPassword" type="password" value={this.props.confirmPassword}></input>
+                                type="password" value={this.props.updatePassword} required></input>
+                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Old Password" name="confirmPassword" type="password" value={this.props.confirmPassword} required></input>
                                 <button onClick={this.props.handleUpdatePassword} className="submit-button">Confirm</button>
                             </form>
                             {
@@ -84,8 +84,8 @@ class Admin extends Component{
                         </div>
                         <div id="register-form">
                             <form>
-                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
-                                <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>
+                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername} required></input>
+                                <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword} required></input>
                                 <button onClick={this.props.handleRegister} className="submit-button">Add User</button>
                             </form>
                             {
