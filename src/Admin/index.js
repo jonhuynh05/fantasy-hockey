@@ -55,20 +55,6 @@ class Admin extends Component{
                                 this.props.error
                             }
                         </div>
-                        <div id="register-form">
-                            <form>
-                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
-                                <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>
-                                <button onClick={this.props.handleRegister} className="submit-button">Add User</button>
-                            </form>
-                            {
-                                this.props.newAdminError === ""
-                                ?
-                                null
-                                :
-                                this.props.newAdminError
-                            }
-                        </div>
                     </>
                 }
                 {
