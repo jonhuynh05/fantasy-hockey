@@ -206,16 +206,16 @@ class DraftHistory extends Component{
                         </div>
                         <div className="row-with-spacer">
                             <div className="category-header-row">
-                                <div className="category" id="round">
+                                <div className="category-col" id="round">
                                     Round
                                 </div>
-                                <div className="category" id="pick">
+                                <div className="category-col" id="pick">
                                     Pick
                                 </div>
-                                <div className="category" id="team">
+                                <div className="category-col" id="team">
                                     Team
                                 </div>
-                                <div className="category" id="selection">
+                                <div className="category-col" id="selection">
                                     Selection
                                 </div>
                             </div>

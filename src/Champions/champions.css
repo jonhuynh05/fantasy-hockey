@@ -20,6 +20,13 @@
     width: 200px;
 }
 
+.category-col{
+    margin: 15px auto;
+    font-weight: bold;
+    width: 200px;
+    font-size: 23px;
+}
+
 .category-input-row{
     margin: 40px;
 }

@@ -125,16 +125,16 @@ class TradeHistory extends Component{
                 </div>
                 <div className="row-with-spacer">
                     <div className="category-header-row">
-                        <div className="category" id="team">
+                        <div className="category-col" id="team">
                             Team
                         </div>
-                        <div className="category" id="acquisition">
+                        <div className="category-col" id="acquisition">
                             Arrivals
                         </div>
-                        <div className="category" id="departure">
+                        <div className="category-col" id="departure">
                             Departures
                         </div>
-                        <div className="category" id="departure">
+                        <div className="category-col" id="departure">
                             Date
                         </div>
                     </div>

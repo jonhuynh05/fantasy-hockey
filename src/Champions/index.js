@@ -106,10 +106,10 @@ class Champions extends Component{
                 </div>
                 <div className="row-with-spacer">
                     <div className="category-header-row">
-                        <div className="category" id="recipient">
+                        <div className="category-col" id="recipient">
                             Recipient
                         </div>
-                        <div className="category" id="year">
+                        <div className="category-col" id="year">
                             Year
                         </div>
                     </div>
