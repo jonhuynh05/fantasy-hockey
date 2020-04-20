@@ -106,6 +106,7 @@ class App extends Component {
         masterAcc: false,
         allAdmin: []
       })
+      this.props.history.push("/")
     })
   }
 
