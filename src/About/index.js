@@ -17,7 +17,7 @@ class About extends Component {
                         Teams
                     </div>
                     Evil Empire - Jordan Matsunaga<br/>
-                    Soft Dump in the Corner - Sasha <br/>Zanjani
+                    Soft Dump in the Corner - Sasha Zanjani<br/>
                     Hands Off My Pekka - Pasha Zanjani<br/>
                     A Girl Has No Team Name - Sarah Hamada<br/>
                     Black Jesus - Alex Wong<br/>
