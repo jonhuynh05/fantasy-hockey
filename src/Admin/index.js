@@ -62,10 +62,27 @@ class Admin extends Component{
                     ?
                     <>
                         <div className="admin-header">
+                            Update Password
+                        </div>
+                        <div id="register-form">
+                            <form>
+                                <input className="admin-input" onChange={this.props.handleChange} placeholder="New Password" name="updatePassword"
+                                type="password" value={this.props.updatePassword}></input>
+                                <input className="admin-input" onChange={this.props.handleChange} placeholder="Old Password" name="confirmPassword" type="password" value={this.props.confirmPassword}></input>
+                                <button className="submit-button">Confirm</button>
+                            </form>
+                            {
+                                this.props.newAdminError === ""
+                                ?
+                                null
+                                :
+                                this.props.newAdminError
+                            }
+                        </div>
+                        <div className="admin-header">
                             Register More Admins
                         </div>
                         <div id="register-form">
-                            {/* IF LOGIN IS TRUE ADD RULE */}
                             <form>
                                 <input className="admin-input" onChange={this.props.handleChange} placeholder="Username" name="newAdminUsername" value={this.props.newAdminUsername}></input>
                                 <input className="admin-input" onChange={this.props.handleChange}  placeholder="Password" name="newAdminPassword" type="password" value={this.props.newAdminPassword}></input>

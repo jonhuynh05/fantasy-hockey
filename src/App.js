@@ -14,6 +14,9 @@ class App extends Component {
   state={
     username: "",
     password: "",
+    updatePassword: "",
+    confirmPassword: "",
+    updatePasswordError: "",
     newAdminUsername: "",
     newAdminPassword: "",
     error: "",
@@ -169,7 +172,7 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path={"/"} render={() => <Home isLoggedIn={this.state.isLoggedIn}/>}/>
-          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister} handleRemove={this.handleRemove}/>}/>
+          <Route exact path={"/thecommissioner"} render={() => <Admin username={this.state.username} password={this.state.password} error={this.state.error} isLoggedIn={this.state.isLoggedIn} updatePassword={this.state.updatePassword} confirmPassword={this.state.confirmPassword} updatePasswordError={this.state.updatePasswordError} newAdminUsername={this.state.newAdminUsername} newAdminPassword={this.state.newAdminPassword} newAdminError={this.state.newAdminError} masterAcc={this.state.masterAcc} allAdmin={this.state.allAdmin} handleChange={this.handleChange} handleLogin={this.handleLogin} handleRegister={this.handleRegister} handleRemove={this.handleRemove}/>}/>
           <Route exact path={"/about"} render={() => <About isLoggedIn={this.state.isLoggedIn}/>}/>
           <Route exact path={"/champions"} render={() => <Champions isLoggedIn={this.state.isLoggedIn}/>}/>
           <Route exact path={"/trade-history"} render={() => <TradeHistory isLoggedIn={this.state.isLoggedIn}/>}/>

@@ -43,7 +43,6 @@ router.post("/login", async(req, res) => {
             if(bcrypt.compareSync(req.body.password, foundAdmin.password)){
                 req.session.username = foundAdmin.username
                 if(req.session.username === "thecommissioner"){
-                    console.log(Admin, "ADMINS")
                     const allAdmin = await Admin.find({})
                     const adminList = []
                     for (let i = 0; i < allAdmin.length; i++){
