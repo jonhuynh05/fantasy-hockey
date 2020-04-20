@@ -127,7 +127,18 @@ class App extends Component {
     })
     .then(async res => {
       const response = await res.json()
-      console.log(response)
+      if(response.message === "Admin updated."){
+        this.setState({
+          updatePasswordError: response.message,
+          updatePassword: "",
+          confirmPassword: ""
+        })
+      }
+      else{
+        this.setState({
+          updatePasswordError: response.message
+        })
+      }
     })
 
   }
