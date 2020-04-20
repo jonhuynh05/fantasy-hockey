@@ -34,6 +34,15 @@ router.get("/logout", async (req, res) => {
     }
 })
 
+router.put("/edit", async(req, res) => {
+    try{
+        console.log(req.body)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 router.post("/login", async(req, res) => {
     try{
         const foundAdmin = await Admin.findOne({

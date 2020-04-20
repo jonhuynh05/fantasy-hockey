@@ -69,14 +69,14 @@ class Admin extends Component{
                                 <input className="admin-input" onChange={this.props.handleChange} placeholder="New Password" name="updatePassword"
                                 type="password" value={this.props.updatePassword}></input>
                                 <input className="admin-input" onChange={this.props.handleChange} placeholder="Old Password" name="confirmPassword" type="password" value={this.props.confirmPassword}></input>
-                                <button className="submit-button">Confirm</button>
+                                <button onClick={this.props.handleUpdatePassword} className="submit-button">Confirm</button>
                             </form>
                             {
-                                this.props.newAdminError === ""
+                                this.props.updatePasswordError === ""
                                 ?
                                 null
                                 :
-                                this.props.newAdminError
+                                this.props.updatePasswordError
                             }
                         </div>
                         <div className="admin-header">
