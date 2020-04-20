@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import "./tradehistory.css"
 
+let tradesMap = ""
+
 class TradeHistory extends Component{
     state = {
         team: "",
         arrivals: "",
         departures: "",
         date: "",
-        trades: []
+        trades: [],
+        tradeDetails: ""
     }
 
     async getTradeList () {
@@ -16,61 +19,16 @@ class TradeHistory extends Component{
         this.setState({
             trades: tradeList
         })
+        this.getMapDetails()
     }
 
     async componentDidMount(){
         this.getTradeList()
     }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.currentTarget.name]: e.currentTarget.value
-        })
-    }
 
-    handleSubmit = async (e) => {
-        e.preventDefault()
-        await fetch(`/trades/new`, {
-            method: "POST",
-            credentials: "include",
-            body: JSON.stringify(this.state),
-            headers: {
-              "Content-Type": "application/json"
-            }
-        })
-        .then(async res => {
-            const response = await res.json()
-            console.log(response)
-            this.setState({
-                team: "",
-                arrivals: "",
-                departures: "",
-                date: ""
-            })
-            this.getTradeList()
-        })
-    }
-
-    handleDelete = async (e) => {
-        try{
-            await fetch(`/trades/remove/`, {
-                method: "DELETE",
-                credentials: "include",
-                body: JSON.stringify(this.state.trades[e.currentTarget.value]),
-                headers: {
-                  "Content-Type": "application/json"
-                }
-              })
-            this.getTradeList()
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-
-    render(){
-
-        const trades = this.state.trades.map((trade, i) => {
+    async getMapDetails () {
+        tradesMap = this.state.trades.map((trade, i) => {
             return(
                 <div key={i} className="row-with-delete">
                     <div key={i} className=
@@ -107,7 +65,59 @@ class TradeHistory extends Component{
                 </div>
             )
         })
+        this.setState({
+            tradeDetails: tradesMap
+        })
+    }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
+    }
+
+    handleSubmit = async (e) => {
+        e.preventDefault()
+        await fetch(`/trades/new`, {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(this.state),
+            headers: {
+              "Content-Type": "application/json"
+            }
+        })
+        .then(async res => {
+            const response = await res.json()
+            console.log(response)
+            this.setState({
+                team: "",
+                arrivals: "",
+                departures: "",
+                date: ""
+            })
+            this.getMapDetails()
+            this.getTradeList()
+        })
+    }
+
+    handleDelete = async (e) => {
+        try{
+            await fetch(`/trades/remove/`, {
+                method: "DELETE",
+                credentials: "include",
+                body: JSON.stringify(this.state.trades[e.currentTarget.value]),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              })
+            this.getTradeList()
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+    render(){
         return(
             <div id="trade-history-container">
                 <div className="header" id="trade-header">
@@ -137,7 +147,7 @@ class TradeHistory extends Component{
                         null
                     }
                 </div>
-                {trades}
+                {tradesMap}
                 {
                     this.props.isLoggedIn
                     ?
