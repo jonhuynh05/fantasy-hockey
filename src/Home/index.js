@@ -49,7 +49,7 @@ class Home extends Component{
         return(
             <div id="home-container">
                 <div className="header" id="champion-header">
-                    All Hail 2018 Champion, Evil Empire!
+                    All Hail 2019 Champion, Evil Empire!
                 </div>
                 <div>
                     <img id="home-image" src={this.state.imgURL} alt={this.state.imgURL}></img>
