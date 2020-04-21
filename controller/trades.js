@@ -8,9 +8,10 @@ router.get("/", async (req, res) => {
         const tradeList = []
         for (let i = 0; i < allTrades.length; i++){
             tradeList.push({
-                team: allTrades[i].team,
-                arrivals: allTrades[i].arrivals,
-                departures: allTrades[i].departures,
+                team1: allTrades[i].team1,
+                team2: allTrades[i].team2,
+                acquisition1: allTrades[i].acquisition1,
+                acquisition2: allTrades[i].acquisition2,
                 date: allTrades[i].date,
                 id: allTrades[i]._id
             })
@@ -26,9 +27,10 @@ router.get("/", async (req, res) => {
 router.post("/new", async (req, res) => {
     try{
         const tradeDbEntry = {}
-        tradeDbEntry.team = req.body.team
-        tradeDbEntry.arrivals = req.body.arrivals
-        tradeDbEntry.departures = req.body.departures
+        tradeDbEntry.team1 = req.body.team1
+        tradeDbEntry.team2 = req.body.team2
+        tradeDbEntry.acquisition1 = req.body.acquisition1
+        tradeDbEntry.acquisition2 = req.body.acquisition2
         tradeDbEntry.date = req.body.date
         const newTrade = await Trade.create(tradeDbEntry)
         res.json({

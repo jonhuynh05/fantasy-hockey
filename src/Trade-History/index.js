@@ -6,9 +6,10 @@ let tradesMap = ""
 
 class TradeHistory extends Component{
     state = {
-        team: "",
-        arrivals: "",
-        departures: "",
+        team1: "",
+        team2: "",
+        acquisition1: "",
+        acquisition2: "",
         date: "",
         trades: [],
         tradeDetails: ""
@@ -41,13 +42,16 @@ class TradeHistory extends Component{
                         }
                     >
                         <div className="category" id="team">
-                            {trade.team}
+                            {trade.team1}
                         </div>
                         <div className="category" id="arrivals">
-                            {trade.arrivals}
+                            {trade.acquisition1}
                         </div>
                         <div className="category" id="departures">
-                            {trade.departures}
+                            {trade.acquisition2}
+                        </div>
+                        <div className="category" id="departures">
+                            {trade.team2}
                         </div>
                         <div className="category" id="date">
                             {trade.date}
@@ -90,10 +94,11 @@ class TradeHistory extends Component{
             const response = await res.json()
             console.log(response)
             this.setState({
-                team: "",
-                arrivals: "",
-                departures: "",
-                date: ""
+                team1: "",
+                team2: "",
+                acquisition1: "",
+                acquisition2: "",
+                date: "",
             })
             this.getMapDetails()
             this.getTradeList()
@@ -129,10 +134,13 @@ class TradeHistory extends Component{
                             Team
                         </div>
                         <div className="category-col" id="acquisition">
-                            Arrivals
+                            Acquisition
                         </div>
-                        <div className="category-col" id="departure">
-                            Departures
+                        <div className="category-col" id="acquisition">
+                            Acquisition
+                        </div>
+                        <div className="category-col" id="team">
+                            Team
                         </div>
                         <div className="category-col" id="departure">
                             Date
@@ -153,9 +161,10 @@ class TradeHistory extends Component{
                     ?
                     <div className="category-input-row">
                         <form id="category-input-form">
-                            <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange} required/>
-                            <input className="category-input" id="arrivals-input" placeholder="Arrivals" name="arrivals" value={this.state.arrivals} onChange={this.handleChange} required/>
-                            <input className="category-input" id="departures-input" placeholder="Departures" name="departures" value={this.state.departures} onChange={this.handleChange} required/>
+                            <input className="category-input" id="team-input" placeholder="Team 1" name="team1" value={this.state.team1} onChange={this.handleChange} required/>
+                            <input className="category-input" id="arrivals-input" placeholder="Acquisition 1" name="acquisition1" value={this.state.acquisition1} onChange={this.handleChange} required/>
+                            <input className="category-input" id="arrivals-input" placeholder="Acquisition 2" name="acquisition2" value={this.state.acquisition2} onChange={this.handleChange} required/>
+                            <input className="category-input" id="team-input" placeholder="Team 2" name="team2" value={this.state.team2} onChange={this.handleChange} required/>
                             <input className="category-input" id="date-input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange} required/>
                             <button onClick={this.handleSubmit}className="submit-button" id="trade-submit-button">Submit</button>
                         </form>
