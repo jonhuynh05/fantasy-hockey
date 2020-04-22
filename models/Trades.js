@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const tradesSchema = new Schema ({
+    number: String,
     team1: String,
     team2: String,
     acquisition1: String,
