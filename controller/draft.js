@@ -95,7 +95,6 @@ router.post("/new", async (req, res) => {
                 }
                 else{
                     newYear.details.push(createdDraft)
-                    console.log(newYear, "NEW")
                     newYear.save((err, data) => {
                         res.json({
                             message: `Draft selection added.`
