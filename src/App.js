@@ -21,7 +21,7 @@ class App extends Component {
     newAdminPassword: "",
     error: "",
     newAdminError: "",
-    isLoggedIn: false,
+    isLoggedIn: true,
     masterAcc: false,
     allAdmin: []
   }

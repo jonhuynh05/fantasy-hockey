@@ -251,7 +251,7 @@ class DraftHistory extends Component{
                             <input className="category-input" id="pick-input" placeholder="Pick" name="pick" value={this.state.pick} onChange={this.handleChange} required/>
                             <input className="category-input" id="team-input" placeholder="Team" name="team" value={this.state.team} onChange={this.handleChange} required/>
                             <input className="category-input" id="selection-input" placeholder="Selection" name="selection" value={this.state.selection} onChange={this.handleChange} required/>
-                            <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.year} onChange={this.handleChange} required/>
+                            <input className="category-input" id="year-input" placeholder="Year" name="year" value={this.state.selectedYear} required/>
                             <button onClick={this.handleSubmit}  className="submit-button" id="draft-submit-button">Submit</button>
                         </form>
                     </div>
