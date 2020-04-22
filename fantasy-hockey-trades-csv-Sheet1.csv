@@ -1,0 +1,175 @@
+number,team1,team2,acquisition1,acquisition2,date
+1,Jordan,Logan,acquired T.Hall,acquired D.Krejci and B.Marchand,8/23/2013
+2,Alex,Pasha,acquired G.Landeskog and P.Bergeron,acquired Oshie and W.Simmonds,8/30/2013
+3,Sarah,Jon,acquired D.Boyle ,acquired 2015 7th Round Pick,8/31/2013
+4,Alex,Jon,acquired J.Toews,acquired J.Tavares,8/31/2013
+5,Jordan,Pasha,"acquired A.Ovechkin, A.Kopitar, J.Howard","acquired C.Giroux, H.Sedin, D.Keith, J.Franzen, C.Anderson ",9/1/2013
+6,Jon,Pasha,"acquired T.Ennis, 2015 3rd Round Pick, 2014 9th Round Pick",acquired P.Dupuis,9/6/2013
+7,Pasha,Sarah,acquired J.Voracek and P.Elias,acquired L.Couture and J.Franzen,9/6/2013
+8,Alex,Pasha,acquired P.Berglund and K.Bieksa,acquired M.Del Zotto and B.Richards,10/1/2013
+9,Sarah,Jon,acquired J.Spezza and J.Pavelski,acquired N.Kadri and B.Seabrook,10/4/2013
+10,Alex,Jon,"acquired F.Beauchemin, J.Staal, 2014 6th Round Pick, and 2014 4th Round Pick",acquired K.Shattenkirk and 2014 5th Round Pick,11/19/2013
+11,Jordan,Sarah,acquired B.Burns,acquired V.Filppula and S.Downie,11/22/2013
+12,Jordan,Sarah,acquried M.Duchene (Sarah) and K.Turris (Pasha),"acquired J.Voracek, 2014 5th Round Pick (Pasha), R.Callahan, S.Voynov, 2014 3rd Round Pick (Jordan)",3/7/2014
+13,Pasha,(3-Way),acquired M.Pacioretty (Jordan) and J.Spezza (Sarah),-,
+14,Sarah,Jon,acquired R.Kesler and 2014 5th Round Pick,acquired C.Schneider and 2014 3rd Round Pick,3/7/2014
+15,Jordan,Jon,acquired A.Khudobin,acquired 2014 4th Round Pick,3/7/2014
+16,Jordan,Jon,acquired A.Markov,acquired 2015 4th Round Pick,3/7/2014
+17,Sarah,Alex,"acquired D. Girardi, St.Louis, and 2014 6th Round Pick (originally Jon's)",acquired B.Ryan and A.Edler,6/8/2014
+18,Pasha,Sasha,acquired J.McGinn,acquired M.Read,6/28/2014
+19,Sasha,Sarah,"acquired L.Couture, J.Voracek, R.Josi, M.Gaborik","acquired T.Seguin, D.Krejci, J.Silfverberg, J.Carlson",6/28/2014
+20,Pasha,Sasha,acquired B.Marchand and A.Vermette,acquired J.Williams and M.Boedker,7/11/2014
+21,Pasha,Alex,acquired S.Hartnell,acquired 2015 5th Round Pick and M.Moulson,7/17/2014
+22,Pasha,Sasha,"acquired J.Pominville, M.Grigorenko, 2014 3rd Round Pick",acquired S.Hartnell and M.Del Zotto,7/25/2014
+23,Jordan,Sarah,acquired 2014 3rd Round Pick (originally Jordan's) and 2014  6th Round Pick,acquired N.Bonino and S.Doan,8/12/2014
+24,Jordan,Sasha,acquired 2014 5th Round Pick,acquired L.Eriksson,8/12/2014
+25,Alex,Jordan,acquired 2014 5th Round Pick (originally Sasha's),acquired D.Nurse,8/17/2014
+26,Pasha,Sasha,"acquired B.Little, C.Ceci, and 2015 10th Round Pick",acquired O.Palat and M.Streit,9/28/2014
+27,Pasha,Jon,acquired N.Kadri and 2015 4th Round Pick,acquired J.Spurgeon,11/11/2014
+28,Jordan,Sarah,"acquired T.Seguin, J.Schwartz, and 2015 2nd Round Pick",acquired T.Hall and S.Weber,11/22/2014
+29,Jordan,Sarah,acquired J.Carlson,acquired K.Yandle and a conditional 2015 5th Round Pick (if Yandle is traded in 2015 pick returns),1/31/2015
+30,Jordan,Sasha,acquired D.Stepan and L.Couture,acquired R.McDonagh and M.Duchene,2/1/2015
+31,Sasha,Jon,"acquired N.Mackinnon, R.Lehner, M.Rielly, and 2015 10th Round Pick",acquired R.Josi,2/1/2015
+32,Sasha,Alex,acquired K.Palmieri,acquired M.Backlund,2/1/2015
+33,Pasha,Sarah,acquired 2015 8th Round Pick,acquired T.Daley,2/1/2015
+34,Jon,Sasha,acquired L.Eriksson,acquired a 2015 8th Round Pick,2/1/2015
+35,Alex,Jordan,"acquired A.Pietrangelo, J.Eberle, S.Bennett, 2015 1st Round Pick and 2016 1st Round Pick",acquired 2015 First Round Pick (1st Overall),4/22/2015
+36,Pasha,Jordan,"acquired K.Turris, T.Brodie, and 2015 3rd Round ","acquired J.Faulk, B.Dubinksy, K.Fiala, and 2015 4th Round Pick (originally Jon's)",5/6/2015
+37,Sarah,Jordan,acquired B.Schenn,acquired Conditional 2016 4th Round Pick (pick turns into 3rd if Schenn scores 60 points in 15-16),7/5/2015
+38,Sasha,Alex,acquired 2015 Second Round Pick,acquired 2015 Second Round Pick and M.Hutchinson,7/10/2015
+39,Sarah,Sasha,acquired M.Marner and J.Silfverberg,acquired P.Zacha and A.Mantha,7/19/2015
+40,Jon,(3-Way),acquired N.Hanifin,-,
+41,Jon,Pasha,acquired H.Sedin,acquired 2015 7th Round Pick,7/19/2015
+42,Sarah,Pasha,acquired 2015 7th Round Pick (originally Sarah's traded in the Boyle Trade) and 2015 10th Round Pick (Orignally Sasha's),acquired J.Skinner,7/19/2015
+43,Jordan,Alex,acquired O.Ekman-Larsson,acquired J.Faulk,7/19/2015
+44,Pasha,Sasha,acquired M Gaborik,acquired R.Ellis,12/25/2015
+45,Pasha,Sarah,acquired R.Murray,acquired O.Maatta,1/16/2016
+46,Alex,Pasha,acquired J.Eichel and 2016 3rd Round Pick,"acquired S.Stamkos, 2016 1st Round Pick (Formerly Jordan's), and 2016 6th Round Pick",1/16/2016
+47,Sarah,Jordan,acquired J.Huberdeau and 2016 7th Round Pick,acquired R.O'Reilly and 2016 8th Round Pick,1/16/2016
+48,Jordan,Alex,acquired J.Vans Riemsdyk and D.Larkin,acquired J.Allen and S.Jones,1/16/2016
+49,Pasha ,Jon,acquired 2016 6th Round Pick,acquired J.Thornton,1/16/2016
+50,Sasha,Jordan,"acquired L.Couture, D.Hamilton, K.Connor and 2016 2nd Round Pick",acquired 2016 1st Round Pick (2nd Overall) and 2016 2nd Round Pick,5/5/2016
+51,Pasha,Alex,acquired S.Reinhart,acquired W.Nylander,5/5/2016
+52,Alex,Jon,acquired 2016 1st Round Pick (3rd Overall),"acquired 2016 1st Round Pick (5th Overall), 2016 5th Round Pick and 2018 1st Round Pick",6/17/2016
+53,Pasha,Sasha,acquired R.Nugent-Hopkins and 2016 3rd Round Pick ,"acquired 2016 2nd Round Pick, 2016 4th Round Pick and 2016 6th Round Pick (Formerly Alex's)",6/20/2016
+54,Pasha,Jordan,acquired R.Ellis,acquired B.Gallagher,6/21/2016
+55,Jordan,Jon,"acquired P.K. Subban, 2016 9th Round Pick and 2016 10th Round Pick","acquired S.Vatanen, J.Schwartz and 2016 8th Round Pick (formerly Sarah's)",6/30/2016
+56,Sasha,Alex,acquired N.Leddy and E.Kane,"acquired K.Palmieri, 2016 2nd Round Pick and 2016 4th Round Pick",7/3/2016
+57,Sasha ,Jon,acquired C.Schneider and 2017 5th Round Pick,acquired B.Horvat and A.Mantha,7/3/2016
+58,Jon,Sasha,acquired 2017 8th Round Pick,acquired 2016 8th Round Pick,7/3/2016
+59,Pasha,Sarah,acquired 2016 9th Round Pick ,acquired J.Abelkader ,7/3/2016
+60,Sarah,Pasha,acquired N.Kadri,acquired 2017 6th Round Pick,7/3/2016
+61,Sasha,Jordan,"acquired S.Monahan, J.Carlson and J.Drouin","acquired N.Mackinnon, M.Rielly and I.Provorov",9/4/2016
+62,Pasha,Sasha,acquired P.Buchenevich and 2017 10th Round Pick,acquired H.Zetterberg,9/5/2016
+63,Alex,Jordan,acquired N.Mackinnon and D.Larkin,acquired D.Byfuglien and C.Parayko,11/30/2016
+64,Sasha,Pasha,acquired J.Spezza,acquired Z.Parise,2/4/2017
+65,Sasha,Sarah,"acquired R.Fabbri, K.Yandle, and T.Meier","acquired M.Hoffman, J.Vesey, and R.Spooner",2/4/2017
+66,Sasha,Alex,acquired T.Rask,Acquired 2017 and 2018 2nd Round Picks,2/4/2017
+67,Sasha,Sarah,acquired T.Pearson,acquired B.Nelson,2/4/2017
+68,Sasha,Jon,acquired T.Toffoli and 2017 5th Round Pick,acquired B.Skjei and 2017 3rd Round Pick,2/4/2017
+69,Jordan,Sasha,acquired A.Athanasiou,acquired T.Sanheim,2/4/2017
+70,Sarah,Jordan,acquired M.Zibanejad,acquired M.Tkachuk,2/4/2017
+71,Sarah,Alex,acquired B.Ryan,acquired 2017 5th Round Pick,2/4/2017
+72,Pasha,Jordan,"acquired M.Rielly, D.Nurse, and 2017 4th Round Pick",acquired S.Reinhart and T.J Oshie,2/4/2017
+73,Alex,Pasha,acquired W.Simmonds and R.Ristolainen,"acquired G.Landeskog, M.Sergachev, Z.Werenski, and 2017 3rd Round Pick",2/4/2017
+74,Nima,Sasha,acquired R.Luongo,acquired 2017 3rd Round Pick,5/14/2017
+75,Nima,Pasha,acquired J.Marchessault,acquired 2017 6th Round Pick,6/4/2017
+76,Pasha,Jon,acquired T.Johnson and 2017 8th Round Pick,acquired 2017 3rd Round Pick,6/20/2017
+77,Sasha,Pasha,"acquired 2017 1st Round Pick (1st Overall), M.Zuccarello, 2017 6th Round Pick, 2018 2nd Round Pick","acquired 2017 1st Round Pick (2nd Overall), C.Atkinson, Conditional 2018 5th Round Pick (Pick turns into 2018 3rd Round Pick if Sasha finishes higher in standings)",6/24/2017
+78,Alex,Jordan,"acquired P.Laine, J.Gibson, and J.Klingberg","acquired V.Hedman, W.Nylander and M.Murray",6/30/2017
+79,Pasha,Sasha,"acquired T.Toffoli, L.Couture, and M.Lucic","acquired O.Bjorkstrand, V.Trocheck, J.Bean, and C.Anderson",7/27/2017
+80,Jordan,Sarah,"acquired A.Vasilevskiy, T.Teravainen, J.Silfverberg, 2017 1st Round Pick, and 2018 1st Round Pick","acquired A.Kopitar, R.O'Reilly, C.Hellebuyck, T.Konecny, 2017 2nd Round Pick, and 2018 3rd Round Pick",7/29/2017
+81,Sasha,Jordan,"acquired C.Parayko, M.Domi, C.White, and J.Vrana","acquired J.Drouin, C.McAvoy, and 2019 3rd Round Pick",7/30/2017
+82,Alex,Sasha,acquired B.Boeser and K.Kaprisov,acquired J.Puljujarvi and A.Tuch,7/30/2017
+83,Sasha,Nima,acquired J.Neal and 2018 4th Round Pick,acquired 2017 2nd Round Pick,8/5/2017
+84,Sasha,Tobi,acquired 2017 1st Round Pick (3rd Overall),"acquired J.Carter, M.Zuccarello, and I. Barbeshev",8/13/2017
+85,Jordan,Nima,acquired N.Neiderreiter,acquired T.Jost and A.DeAngelo,8/15/2017
+86,Jon,Tobi,acquired Conditional 2019 3rd Round Pick (Pick turns into 2019 6th Round Pick if Subban starts fewer than 20 games over next two seasons),acquired M.Subban,8/16/2017
+87,Tobi,Jordan,acquired J.Silfverberg,acquired 2017 2nd Round Pick,8/16/2017
+88,Pasha,Jon,acquired J.Muzzin,acquired D.Nurse and 2017 8th Round Pick,8/17/2017
+89,Pasha ,Nima,acquired 2018 7th Round Pick,acquired R.Nash,8/18/2017
+90,Nima,Sasha,acquired T.Pearson and N.Goldobin,acquired O.Lindblom,8/19/2017
+91,Jon,Sarah,acquired 2018 6th Round Pick,acquired 2017 8th Round Pick,8/19/2017
+92,Pasha,Nima,acquired V.Shipachev and N.Schmaltz,acquired G.Nyquist and 2017 6th Round Pick,8/19/2017
+93,Sasha,Pasha,acquired 2017 8th Round Pick,acquired H.Zetterberg,8/19/2017
+94,Sasha,Tobi,acquired 2017 10th Round Pick,acquired 2019 7th Round Pick (originally Sarah's),8/19/2017
+95,Sasha,Sarah,acquired 2017 8th Round Pick and 2019 7th Round Pick,acquired J.Spezza,8/19/2017
+96,Sasha,Jon,acquired B.Perlini,acquired A.Tuch,8/19/2017
+97,Sarah ,Tobi,acquired 2017 9th Round Pick,acquired 2019 7th Round Pick,8/19/2017
+98,Tobi,Pasha,acquired T.Greiss,"acquired D.Orlov, I.Barbeshev, 2018 3rd Round Pick, and 2019 7th Round Pick",8/19/2017
+99,Sarah,Tobi,acquired T.Demko and 2018 1st Round Pick,"acquired M.Jones, 2018 2nd Round Pick, and 2018 3rd Round Pick",8/19/2017
+100,Pasha,Sasha,acquired R.Lehner,acquired E.Svechnikov and L.Andersson,8/19/2017
+101,Sasha,Alex,acquired K.Kaprisov,acquired E.Svechnikov,8/19/2017
+102,Jon,Jordan,acquired V.Hedman,acquired M.Scheifele,8/19/2017
+103,Pasha,Sarah,acquired B.Schenn,acquired C.Atkinson,8/19/2017
+104,Pasha,Nima,acquired C.Sheary,"acquired R.Nugent-Hopkins, I.Barbeshev, and F.Vatrano",9/5/2017
+105,Alex,Pasha,acquired K.Turris and N.Ritchie,acquired J.Faulk,10/10/2017
+106,Tobi,Pasha,R.Smith and Z.Hyman,acquired K.Lebanc,10/23/2017
+107,Jordan,Jon,acquired T.Krug and P.Kessel,acquired J.Drouin and B.Point,10/24/2017
+108,Alex,Tobi,acquired R.Hartman,acquired S.Couturier,10/25/2017
+109,Tobi,Pasha,acquired E.Johnson,acquired 2018 5th Round Pick,10/25/2017
+110,Sasha,Nima,acquired B.Little and V.Namestnikov,"acquired D.Brassard, J.Bean, and A.Beauvillier",10/26/2017
+111,Sasha,Alex,acquired D.Larkin,acquired J.T. Miller and 2018 4th Round Pick,11/5/2017
+112,Sarah,Alex,acquired N.Backstrom and A.Kerfoot,acquired M.Hoffman and 2018 3rd Round Pick,12/2/2017
+113,Jordan,Pasha,acquired M.Rantanen and J.Eriksson-Ek,acquired B.Bishop and 2018 5th Round Pick,12/7/2017
+114,Pasha,Sasha,"acquired A.Radulov, 2019 4th Round Pick, and 2020 4th Round Pick","acquired T.Johnson, S.Varlamov, and S.Hartnell",12/8/2017
+115,Nima,Tobi,acquired N.Bjugstad,acquired J.Williams,2/3/2018
+116,Nima,Sasha,"acquired V.Dunn, 2019 5th Round Pick, and 2019 6th Round Pick",acquired 2018 4th Round Pick; sent to Alex to complete JT Miller deal,2/3/2018
+117,Alex,(3-Way),acquired 2018 4th Round Pick from Sasha,-,
+118,Tobi,Sasha,acquired B.Little,acquired 2019 5th Round Pick,2/3/2018
+119,Tobi,Alex,acquired A.Wennberg and 2019 7th Round Pick,acquired O.Maatta and 2018 3rd Round Pick,2/3/2018
+120,Sasha,Jon,acquired S.Vatanen,acquired Zacha and 2020 3rd Round Conditional Pick (Zacha must score a minimum of 50 points in a single season by the end of 2020 season or the pick becomes 2020 2nd Round Pick),2/3/2018
+121,Jon,Tobi,acquired J.Armia,acquired P.Hornqvist,2/3/2018
+122,Tobi,Alex,"acquired D.Heinen, K.Okposo, 2018 7th Round Pick",acquired Y.Gourde and 2019 4th Round Pick,2/3/2018
+123,Pasha,Jordan,"acquired B.Saad, N.Niederreiter, and F.Chytil","acquired P.Buchnevich, O.Kase, and 2018 3rd Round Pick",7/6/2018
+124,Pasha,Sasha,acquired V.Namestnikov ,acquired 2018 5th Round Pick (Orginally Tobi's),7/26/2018
+125,Sasha,Nima,acquired 2019 6th Round Pick,acquired D.Phaneuf,7/26/2018
+126,Nima,Pasha,"acquired L.Couture, M.Sergachev, W.Butcher, N.Schmaltz, T.Thompson, and 2018 3rd Round Pick (Orginally Sasha's)",acquired 2018 1st Round Pick (1st Overall),8/7/2018
+127,Sarah,Jordan,acquired A.Lee and D.Stepan,acquired Conditional 2019 3rd Round Pick (turns to a 2019 2nd Round Pick if Lee scores 30+ in the 2018-2019 season) and 2020 3rd Round Pick,8/12/2018
+128,Pasha,Jordan,"acquired C.McAvoy, M.Tkachuk, T.Chabot, 2018 1st Round Pick (8th Overall)","acquired 2018 1st Round Pick (1st Overall), 2018 5th Round Pick and 2019 5th Round Pick",8/18/2018
+129,Nima,Pasha,acquired T.J Brodie,acquired 2019 5th Round Pick,8/18/2018
+130,Alex,Sasha,acquired 1st Round Pick (5th Overall),"acquired 2018 2nd Round Pick, 2018 3rd Round Pick, 2018 4th Round Pick, 2019 4th Round Pick, and 2020 5th Round Pick",8/18/2018
+131,Sasha,Sarah,"acquired M.Necas, D.Stepan, and C.Fowler","acquired M.Domi, T.Johnson, C.Glass, and 2018 5th Round Pick",8/18/2018
+132,Pasha,Jon,acquired R.Johansen,acquired K.Lebanc and 2019 3rd Round Pick,8/18/2018
+133,Pasha,Sarah,acquired E.Haula,acquired C.Sheary and 2018 7th Round Pick,8/18/2018
+134,Sasha,Nima,acquired M.Backlund and T.Bozak,"acquired B.Perlini, A.Gaudette, and S.Varlamov",8/22/2018
+135,Pasha,Sasha,acquired J.Anderson,acquired D.Orlov,8/23/2018
+136,Pasha,Nima,acquired D.Brassard,"acquired N.Ritchie, V.Namestnikov, and a 2019 Conditional 7th Round Pick (turns into a 6th if Brassard scores 50 or more points)",10/5/2018
+137,Nima ,Tobi,"acquired S.Couturier, N.Dobson, and 2020 Conditional 3rd Round Pick (turns into a 4th Round Pick if Dobson plays 9 games in 2019-2020)",acquired S.Varlamov,12/3/2018
+138,Jon,Pasha,acquired D.Keith,acquired 2019 3rd Round Pick (Originally Tobi's),12/26/2018
+139,Jon,Sasha,acquired S.Girard,acquired K.Fiala,12/26/2018
+140,Sarah,Pasha,"acquired R.Ellis, F.Chytil, and 2019 6th Round Pick",acquired M.Zibanejad,12/29/2018
+141,Jon,Nima,acquired N.Ritchie,acquired A.Mantha and a 2019 4th Round Pick,2/2/2019
+142,Tobi,Pasha,acquired M.Pacioretty and 2019 4th Round Pick (Orginally Sasha's),"acquired P.Hornqvist, J.Manson, and 2019 2nd Round Pick",2/2/2019
+143,Sasha,Jordan,acquired V.Arvidsson and 2019 2nd Round Pick,acquired K.Letang,2/2/2019
+144,Tobi,Nima,acquired G.Nyqvist ,acquired J.Zucker,2/2/2019
+145,Tobi,Sasha,acquired M.Backlund ,acquired R.Smith,2/2/2019
+146,Sasha,Pasha,"acquired B.Saad, A.Nylander, and 2020 5th Round Pick",acquired S.Vatanen and S.Steel,2/3/2019
+147,Pasha,Jon,acquired K.Shattenkirk,acquired S.Vatanen,7/14/2019
+148,Nima,Pasha,acquired R.Fabbri and J.Manson,acquired 2019 6th Round Pick (Originally Sasha's),7/30/2019
+149,Sasha,Jordan,"acquired T.Seguin, I.Provorov, C.Mittelstadt, and 2019 1st Round Pick (8th overall)",acquired E.Pettersson and 2019 1st Round Pick (3rd overall),8/1/2019
+150,Sarah,Jon,acquired E.Karlsson and 2019 7th Round Pick,"acquired N.Gusev, T.Konecny, and 2019 2nd Round Pick",8/11/2019
+151,Nima,Sasha,acquired C.Hutton,acquired 2019 4th Round Pick (orginally Jon's) and 2020 4th Round Pick,8/13/2019
+152,Jon,Jordan,acquired 2019 3rd Round Pick (originally Sarah's) and 2021 3rd Round Pick,acquired 2019 2nd Round Pick,8/14/2019
+153,Jon,Pasha,"acquired J.Faulk, D.Cholowski, and 2021 3rd Round Pick",acquired J.Drouin,8/16/2019
+154,Pasha,Nima,acquired A.Mantha,acquired R.Johansen and 2020 4th Round Pick,8/16/2019
+155,Sasha,Jordan,acquired 2019 3rd Round Pick (originally Sasha's) and 2019 5th Round Pick,acquired 2019 2nd Round Pick,8/16/2019
+156,Pasha,Alex,acquired J.Gardiner,acquired 2019 2nd Round Pick (originally Tobi's),8/16/2019
+157,Sasha,Tobi,acquired R.Poehling,acquired 2019 4th Round Pick,8/16/2019
+158,Pasha,Jordan,acquired 2019 6th Round Pick (originally Sasha's) and 2020 6th Round Pick,acquired 2019 6th Round Pick,8/16/2019
+159,Pasha,Alex,acquired M.Hoffman,"acquired S.Steel, 2020 3rd Round Pick, and 2021 4th Round Pick",8/17/2019
+160,Tobias,Alex,"acquired A.Pietrangelo, J.Toews, and 2020 4th Round Pick","acquired B.Hayton, D.Fabbro, 2020 2nd Round Pick, and 2020 5th Round Pick",8/17/2019
+161,Jordan,Sarah,"acquired M.Heiskanen, B.Byram, and Conditional 2020 2nd Rounder (if Heiskanen fails to score 35+ points otherwise pick turns into 2021 3rd Round Pick)","acquired A.Panarin, K.Yamamoto, and H.Jokiharju",8/17/2019
+162,Pasha,Alex,acquired D.Strome,acquired J.Drouin and 2021 2nd Round Pick,8/17/2019
+163,Alex,Jon,"acquired N.Hanifin, 2020 2nd Round Pick, and 2021 2nd Round Pick",acquired R.Ristolainen and 2020 3rd Round Pick,8/18/2019
+164,Sasha,Pasha,"acquired Z.Werenski, B.Schenn, and 2021 1st Round Pick",acquired D.Hamilton,8/18/2019
+165,Nima,Pasha,acquired T.Toffoli,acquired 2020 3rd Round Pick,09/04/2019
+166,Tobi,Sasha,"acquired E.Kane, R.Smith, and N.Patrick","acquired 2020 1st Round Pick, N.Suzuki, V.Olofsson, M.Ekholm, and W.Simmonds",10/21/2019
+167,Jon,Jordan,acquired O.Ekman-Larsson,acquired J.Benn,11/2/2019
+168,Nima,Sasha,acquired R.Thomas and T.Bertuzzi,acquired J.Marchessault,12/5/2019
+169,Pasha,Sasha,acquired K.Fiala and 2020 5th Round Pick (orginally Alex's),acquired C.McAvoy,12/8/2019
+170,Alex,Tobias,acquired C.McMichael,acquired 2021 3rd Round Pick and 2021 7th Round Pick,12/10/2019
+171,Pasha,Nima,acquired D.Perron and 2020 6th Round Pick,acquired N.Niederreiter and J.Anderson,2/2/2020
+172,Pasha,Sarah,acquired A.Lee,acquired A.Burakovsky,2/2/2020
+173,Sasha,Pasha,acquired P.Hornqvist,acquired 2020 5th Round Pick,2/2/2020
+174,Alex,Jordan,acquired T.Smith and 2020 2nd Round Pick,acquired P.Mrazek,2/2/2020
