@@ -6,6 +6,7 @@ let tradesMap = ""
 
 class TradeHistory extends Component{
     state = {
+        number: "",
         team1: "",
         team2: "",
         acquisition1: "",
@@ -18,7 +19,8 @@ class TradeHistory extends Component{
     async getTradeList () {
         const tradeList = await(await fetch(`/trades`)).json()
         this.setState({
-            trades: tradeList
+            trades: tradeList,
+            number: Number(tradeList.length + 1)
         })
         this.getMapDetails()
     }
@@ -161,6 +163,7 @@ class TradeHistory extends Component{
                     ?
                     <div className="category-input-row">
                         <form id="category-input-form">
+                            <input className="category-input" id="team-input" placeholder="Trade Number" name="number" value={this.state.number} required/>
                             <input className="category-input" id="team-input" placeholder="Team 1" name="team1" value={this.state.team1} onChange={this.handleChange} required/>
                             <input className="category-input" id="arrivals-input" placeholder="Acquisition 1" name="acquisition1" value={this.state.acquisition1} onChange={this.handleChange} required/>
                             <input className="category-input" id="arrivals-input" placeholder="Acquisition 2" name="acquisition2" value={this.state.acquisition2} onChange={this.handleChange} required/>
