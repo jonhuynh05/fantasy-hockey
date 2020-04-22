@@ -44,10 +44,10 @@ router.get("/:year", async(req, res) => {
             allDetails.push(foundDetails)
         }
         function compare(a, b){
-            if(a.pick < b.pick){
+            if(Number(a.pick) < Number(b.pick)){
                 return -1
             }
-            if(a.pick > b.pick){
+            if(Number(a.pick) > Number(b.pick)){
                 return 1
             }
             return 0
